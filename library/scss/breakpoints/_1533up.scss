@@ -1,0 +1,36 @@
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: Super Large Monitor Stylesheet
+
+You can add some advanced styles here if you like. This kicks in
+on larger screens.
+
+******************************************************************/
+
+.wrap {
+  width: 1533px;
+}
+
+#top-home {
+	#map-box {
+			width: 64.7%; //504/1533
+		}
+}
+
+#middle-home {
+	
+	
+	#home-middle-col-1 {
+	
+	}
+	#home-middle-col-2 {
+	width: 31.1%;
+	
+	}
+	#home-middle-col-3 {
+		width: 31.1%;
+	
+	}
+}

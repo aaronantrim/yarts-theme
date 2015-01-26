@@ -11,6 +11,174 @@ sidebars, comments, ect.
 // LOAD BONES CORE (if you remove this, the theme will break)
 require_once( 'library/bones.php' );
 
+function the_breadcrumb() {
+    global $post;
+    echo '<ul id="breadcrumbs">';
+   /* if (!is_home()) {
+        echo '<li><a href="';
+        echo get_option('home');
+        echo '">';
+        echo 'Home';
+        echo '</a></li><li class="separator"> > </li>';
+        if (is_category() || is_single()) {
+            echo '<li>';
+            the_category(' </li><li class="separator"> > </li><li> ');
+            if (is_single()) {
+                echo '</li><li class="separator"> > </li><li>';
+                the_title();
+                echo '</li>';
+            }
+        } elseif('route' == get_post_type() ) {
+       	
+                echo '<li><a href="/routes-and-schedules/">Routes & Schedules</a></li><li class="separator">></li><li><strong> '.get_the_title().'</strong></li>';
+            
+        
+        }
+        
+        elseif('timetable' == get_post_type() ) {
+        
+        
+        }
+        
+        elseif('alert' == get_post_type() ) {
+        	
+        	echo 'alert';
+        
+        }
+        
+        elseif('route' == get_post_type() ) {
+        
+        
+        }
+        elseif (is_page()) {
+            if($post->post_parent){
+                $anc = get_post_ancestors( $post->ID );
+                $title = get_the_title();
+                foreach ( $anc as $ancestor ) {
+                    $output = '<li><a href="'.get_permalink($ancestor).'" title="'.get_the_title($ancestor).'">'.get_the_title($ancestor).'</a></li> <li class="separator">/</li>';
+                }
+                echo $output;
+                echo '<strong title="'.$title.'"> '.$title.'</strong>';
+            } else {
+                echo '<li><strong> '.get_the_title().'</strong></li>';
+            }
+        } 
+    }
+    elseif (is_tag()) {single_tag_title();}
+    elseif (is_day()) {echo"<li>Archive for "; the_time('F jS, Y'); echo'</li>';}
+    elseif (is_month()) {echo"<li>Archive for "; the_time('F, Y'); echo'</li>';}
+    elseif (is_year()) {echo"<li>Archive for "; the_time('Y'); echo'</li>';}
+    elseif (is_author()) {echo"<li>Author Archive"; echo'</li>';}
+    elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {echo "<li>Blog Archives"; echo'</li>';}
+    elseif (is_search()) {echo"<li>Search Results"; echo'</li>';}
+    
+    */
+    
+    if (!is_home()) {
+        echo '<li><a href="';
+        echo get_option('home');
+        echo '">';
+        echo 'Home';
+        echo '</a></li><li class="separator"> > </li>';
+    	
+    	if(is_archive()) {
+    		$post_type = get_post_type();
+    		
+			if ( $post_type )
+			{
+			
+				$taxonomy = 'alert-zone';
+				$taxonomy_terms = get_terms( $taxonomy, array(
+					'hide_empty' => 0,
+					'fields' => 'ids'
+				) );
+		
+				if(has_term($taxonomy_terms, 'alert-zone')) {
+					
+					echo 'Alerts';
+					
+				}	else {
+				
+					$post_type_data = get_post_type_object( $post_type );
+					$post_type_slug = $post_type_data->rewrite['slug'];
+					echo $post_type_data->label;
+
+				
+				}
+			}
+    	}
+    	
+    	elseif (is_single()) {
+    	
+    		$post_type = get_post_type();
+    		
+			if ( $post_type )
+			{
+				$post_type_data = get_post_type_object( $post_type );
+				$post_type_slug = $post_type_data->rewrite['slug'];
+				echo '<li><a href="'.get_post_type_archive_link( $post_type ).'">';
+				 echo $post_type_data->label;
+				echo '</a></li>';
+			}
+    	
+           
+            
+            if (is_single()) {
+            
+            
+            
+                echo '</li><li class="separator"> > </li><li>';
+                
+				
+               echo str_replace('>','<span class="route-triangle">&#9654;</span>',get_the_title()); 
+                if( $post_type_data = get_post_type_object( $post_type )->rewrite['slug'] == 'routes-and-schedules') {
+                
+                	echo ' - '.get_field('route_subtitle');
+                	
+                }
+                echo '</li>';
+            }
+        }
+        
+        elseif (is_page()) {
+        	 echo '</li><li>';
+                the_title();
+                echo '</li>';
+        
+        }
+    
+    
+    echo '</ul>';
+    
+    }
+    
+}
+
+ function slugify($text)
+{ 
+  // replace non letter or digits by -
+  $text = preg_replace('~[^\\pL\d]+~u', '-', $text);
+
+  // trim
+  $text = trim($text, '-');
+
+  // transliterate
+  $text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
+
+  // lowercase
+  $text = strtolower($text);
+
+  // remove unwanted characters
+  $text = preg_replace('~[^-\w]+~', '', $text);
+
+  if (empty($text))
+  {
+    return 'n-a';
+  }
+
+  return $text;
+}
+
 // CUSTOMIZE THE WORDPRESS ADMIN (off by default)
 // require_once( 'library/admin.php' );
 
@@ -244,6 +412,349 @@ function bones_fonts() {
 
 add_action('wp_enqueue_scripts', 'bones_fonts');
 
+/* START TRILLIUM CUSTOM */
 
+function register_my_menus() {
+  register_nav_menus(
+    array( 
+      'main-home-menu' => __( 'Main Home Menu' ), 
+      'main-subpage-top-menu' => __( 'Main Subpage Top Menu' ), 
+
+    )
+  );
+}
+
+// change image name on custom types
+add_action('do_meta_boxes', 'change_image_box');
+function change_image_box()
+{
+    remove_meta_box( 'postimagediv', 'route', 'side' );
+    add_meta_box('postimagediv', __('Map Image File'), 'post_thumbnail_meta_box', 'route', 'normal', 'high');
+}
+
+
+add_action( 'init', 'register_my_menus' );
+
+class My_Walker extends Walker_Nav_Menu
+{
+	function start_el(&$output, $item, $depth, $args) {
+		global $wp_query;
+		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+
+		$class_names = $value = '';
+
+		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
+
+		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
+		$class_names = ' class=" linked-div ' . esc_attr( $class_names ) . '"';
+
+		$output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
+
+		$attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
+		$attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
+		$attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
+		$attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+
+		$item_output = $args->before;
+		$item_output .= '<a'. $attributes .'>';
+		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+		$item_output .= '</a>';
+		$item_output .= '<span class="menu-item-desc">' . $item->description . '</span><br style="clear: both;" />';
+		$item_output .= $args->after;
+
+		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+	}
+}
+
+class My_SubPage_Walker extends Walker_Nav_Menu
+{
+	function start_el(&$output, $item, $depth, $args) {
+		global $wp_query;
+		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+
+		$class_names = $value = '';
+
+		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
+
+		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
+		$class_names = ' class=" linked-div ' . esc_attr( $class_names ) . '"';
+
+		$output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
+
+		$attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
+		$attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
+		$attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
+		$attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+
+		$item_output = $args->before;
+		$item_output .= '<i class="'.slugify($item->title).'"></i><a'. $attributes .'>';
+		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+		$item_output .= '</a>';
+		$item_output .= '';
+		$item_output .= $args->after;
+
+		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+	}
+}
+
+function codex_route_init() {
+
+$labels = array(
+		'name'               => _x( 'Board Meetings', 'post type general name' ),
+		'singular_name'      => _x( 'board-meeting', 'post type singular name' ),
+		'menu_name'          => _x( 'Board Meetings', 'admin menu'),
+		'name_admin_bar'     => _x( 'Board Meeting', 'add new on admin bar'),
+		'add_new'            => _x( 'Add New meeting', 'board-meeting'),
+		'add_new_item'       => __( 'Add New meeting'),
+		'new_item'           => __( 'New meeting'),
+		'edit_item'          => __( 'Edit meeting'),
+		'view_item'          => __( 'View meeting '),
+		'all_items'          => __( 'All meetings'),
+		'search_items'       => __( 'Search meetings'),
+		'parent_item_colon'  => __( 'Parent meeting:'),
+		'not_found'          => __( 'No meetings found.'),
+		'not_found_in_trash' => __( 'No meetings found in Trash.')
+	);
+
+	$args = array(
+		'menu_icon' => '',
+		'labels'             => $labels,
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'board-meeting' ),
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => true,
+		'menu_position'      => null,
+		'supports'           => array( 'title', 'revisions', 'thumbnail' )
+	);
+
+	register_post_type( 'board-meeting', $args );
+
+
+	$labels = array(
+		'name'               => _x( 'Routes &amp; Schedules', 'post type general name' ),
+		'singular_name'      => _x( 'route', 'post type singular name' ),
+		'menu_name'          => _x( 'Routes', 'admin menu'),
+		'name_admin_bar'     => _x( 'Route', 'add new on admin bar'),
+		'add_new'            => _x( 'Add New', 'route'),
+		'add_new_item'       => __( 'Add New route'),
+		'new_item'           => __( 'New route'),
+		'edit_item'          => __( 'Edit Route'),
+		'view_item'          => __( 'View Route'),
+		'all_items'          => __( 'All Routes'),
+		'search_items'       => __( 'Search Routes'),
+		'parent_item_colon'  => __( 'Parent Routes:'),
+		'not_found'          => __( 'No routes found.'),
+		'not_found_in_trash' => __( 'No routes found in Trash.')
+	);
+
+	$args = array(
+		'menu_icon' => '',
+		'labels'             => $labels,
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'routes-and-schedules' ),
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => false,
+		'menu_position'      => null,
+		'supports'           => array( 'title', 'revisions', 'thumbnail' )
+	);
+
+	register_post_type( 'route', $args );
+	
+	
+	
+	$labels = array(
+		'name'               => _x( 'Timetables', 'post type general name' ),
+		'singular_name'      => _x( 'timetable', 'post type singular name' ),
+		'menu_name'          => _x( 'Timetables', 'admin menu'),
+		'name_admin_bar'     => _x( 'Timetable', 'add new on admin bar'),
+		'add_new'            => _x( 'Add New', 'timetable'),
+		'add_new_item'       => __( 'Add New Timetable'),
+		'new_item'           => __( 'New timetable'),
+		'edit_item'          => __( 'Edit timetable'),
+		'view_item'          => __( 'View timetable '),
+		'all_items'          => __( 'All timetables'),
+		'search_items'       => __( 'Search timetables'),
+		'parent_item_colon'  => __( 'Parent timetable:'),
+		'not_found'          => __( 'No timetables found.'),
+		'not_found_in_trash' => __( 'No timetables found in Trash.')
+	);
+
+	$args = array(
+		'menu_icon' => '',
+		'labels'             => $labels,
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'timetables' ),
+		'capability_type'    => 'post',
+		'has_archive'        => false,
+		'hierarchical'       => false,
+		'menu_position'      => null,
+		'supports'           => array( 'title', 'editor', 'revisions','page-attributes' )
+		
+	);
+
+	register_post_type( 'timetable', $args );
+	
+	
+	$labels = array(
+		'name'               => _x( 'Alerts', 'post type general name' ),
+		'singular_name'      => _x( 'alert', 'post type singular name' ),
+		'menu_name'          => _x( 'Alerts', 'admin menu'),
+		'name_admin_bar'     => _x( 'Alert', 'add new on admin bar'),
+		'add_new'            => _x( 'Add New', 'alert'),
+		'add_new_item'       => __( 'Add New Alert'),
+		'new_item'           => __( 'New Alert'),
+		'edit_item'          => __( 'Edit Alert'),
+		'view_item'          => __( 'View Alert '),
+		'all_items'          => __( 'All Alerts'),
+		'search_items'       => __( 'Search Alerts'),
+		'parent_item_colon'  => __( 'Parent Alert:'),
+		'not_found'          => __( 'No alerts found.'),
+		'not_found_in_trash' => __( 'No alerts found in Trash.')
+	);
+
+	$args = array(
+		'menu_icon' => '',
+		'labels'             => $labels,
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'alerts' ),
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => true,
+		'menu_position'      => null,
+		'supports'           => array( 'title', 'editor', 'revisions' )
+	);
+
+	register_post_type( 'alert', $args );
+	
+	$labels = array(
+		'name'               => _x( 'News', 'post type general name' ),
+		'singular_name'      => _x( 'News', 'post type singular name' ),
+		'menu_name'          => _x( 'News', 'admin menu'),
+		'name_admin_bar'     => _x( 'News', 'add new on admin bar'),
+		'add_new'            => _x( 'Add New', 'news'),
+		'add_new_item'       => __( 'Add New News'),
+		'new_item'           => __( 'New news'),
+		'edit_item'          => __( 'Edit news'),
+		'view_item'          => __( 'View news '),
+		'all_items'          => __( 'All news'),
+		'search_items'       => __( 'Search news'),
+		'parent_item_colon'  => __( 'Parent news:'),
+		'not_found'          => __( 'No news found.'),
+		'not_found_in_trash' => __( 'No news found in Trash.')
+	);
+
+	$args = array(
+		'menu_icon' => '',
+		'labels'             => $labels,
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'news' ),
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => true,
+		'menu_position'      => null,
+		'supports'           => array( 'title', 'editor', 'revisions' )
+	);
+
+	register_post_type( 'news', $args );
+	
+	$labels = array(
+		'name'               => _x( 'home_slide', 'post type general name' ),
+		'singular_name'      => _x( 'Home Slide', 'post type singular name' ),
+		'menu_name'          => _x( 'Home Slide', 'admin menu'),
+		'name_admin_bar'     => _x( 'Home Slide', 'add new on admin bar'),
+		'add_new'            => _x( 'Add New', 'home_slide'),
+		'add_new_item'       => __( 'Add New Home Slide'),
+		'new_item'           => __( 'New home slide'),
+		'edit_item'          => __( 'Edit home slide'),
+		'view_item'          => __( 'View home slide '),
+		'all_items'          => __( 'All home slides'),
+		'search_items'       => __( 'Search home slide'),
+		'parent_item_colon'  => __( 'Parent home slide:'),
+		'not_found'          => __( 'No home_slide found.'),
+		'not_found_in_trash' => __( 'No home_slide found in Trash.')
+	);
+
+	$args = array(
+		'menu_icon' => '',
+		'labels'             => $labels,
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'home_slide' ),
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => true,
+		'menu_position'      => null,
+		'supports'           => array( 'title', 'revisions', 'thumbnail' )
+	);
+
+	register_post_type( 'home_slide', $args );
+	
+	
+}
+
+add_action( 'init', 'codex_route_init' );
+
+function get_alertCount() {
+
+	$taxonomy = 'alert-zone';
+	$taxonomy_terms = get_terms( $taxonomy, array(
+		'hide_empty' => 0,
+		'fields' => 'ids'
+	) );
+
+	$args = array(
+				'numberposts' => -1,
+				'post_type' => array('alert','news'),
+				'tax_query' =>
+							array(
+								array(
+									'taxonomy' => 'alert-zone',
+									'field' => 'id',
+									'terms' => $taxonomy_terms,
+								),
+							)
+				
+			);
+ 
+	
+	
+	/*$args = array(
+				'numberposts' => -1,
+				'post_type' => 'alert');*/
+	$the_query = new WP_Query( $args );
+
+
+
+	$size = sizeof($the_query->posts);
+
+	wp_reset_query();
+	return $size;
+
+}
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>

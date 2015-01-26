@@ -510,10 +510,9 @@ some nice typographical defaults
 more here: http://www.newnet-soft.com/blog/csstypography
 */
 p {
-  -ms-word-break: break-all;
-  -ms-word-wrap: break-all;
+  -ms-word-wrap: break-word;
   word-break: break-word;
-  word-break: break-word;
+  word-wrap: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   hyphens: auto;
@@ -843,6 +842,553 @@ them however you see fit.
     float: left;
     padding-right: 0.75em;
     width: 8.33%; } }
+#top-home {
+  background: url(../images/wood1.jpg); }
+  #top-home #promo-box {
+    display: none;
+    width: 34%;
+    height: 627px;
+    margin: 0px 18px 18px 0;
+    float: left;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 400;
+    text-align: center;
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 1.25em;
+    font-family: 'Oswald', sans-serif; }
+    #top-home #promo-box #home-quote-author {
+      font-size: .8em; }
+  #top-home #promo-box #home-slide-edit-link {
+    display: none; }
+  #top-home #promo-box:hover #home-slide-edit-link {
+    display: inherit; }
+  #top-home #map-box {
+    width: 64.5%;
+    height: 627px;
+    background: #f4eaca;
+    margin: 0 0px 18px 18px;
+    margin-left: 0;
+    float: left;
+    position: relative;
+    background-image: url(../images/map-temp.png);
+    background-position: center center;
+    color: #665b51; }
+    #top-home #map-box #map-instructions {
+      float: left;
+      margin-left: 29px;
+      margin-top: 20px; }
+    #top-home #map-box #desktop-map-alerts {
+      position: absolute;
+      right: 20px;
+      bottom: 100px; }
+    #top-home #map-box #map-decoration-lines-top {
+      background-image: url(../images/map-edge-horizontal.png);
+      height: 15px;
+      background-repeat: repeat-x;
+      width: 100%;
+      background-position: 0px 2px; }
+    #top-home #map-box #map-decoration-lines-left {
+      background-image: url(../images/map-edge-vertical.png);
+      width: 15px;
+      height: 100%;
+      background-repeat: repeat-y;
+      background-position: 3px 0; }
+    #top-home #map-box #map-decoration-lines-right {
+      background-image: url(../images/map-edge-vertical.png);
+      width: 15px;
+      height: 100%;
+      background-repeat: repeat-y;
+      position: absolute;
+      right: 0;
+      top: 0;
+      background-position: 5px 0; }
+    #top-home #map-box #map-decoration-lines-bottom {
+      background-image: url(../images/map-edge-horizontal.png);
+      height: 15px;
+      background-repeat: repeat-x;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      background-position: 0px 3px; }
+
+#middle-home {
+  background-color: #36332b;
+  background: #49473f;
+  /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiM0OTQ3M2YiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMzMzMDI4IiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background-image: url(../images/clear-grain.png), -moz-radial-gradient(center, ellipse cover, #49473f 0%, #333028 100%);
+  /* FF3.6+ */
+  background-image: url(../images/clear-grain.png), -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #49473f), color-stop(100%, #333028));
+  /* Chrome,Safari4+ */
+  background-image: url(../images/clear-grain.png), -webkit-radial-gradient(center, ellipse cover, #49473f 0%, #333028 100%);
+  /* Chrome10+,Safari5.1+ */
+  background-image: url(../images/clear-grain.png), -o-radial-gradient(center, ellipse cover, #49473f 0%, #333028 100%);
+  /* Opera 12+ */
+  background-image: url(../images/clear-grain.png), -ms-radial-gradient(center, ellipse cover, #49473f 0%, #333028 100%);
+  /* IE10+ */
+  background-image: url(../images/clear-grain.png), radial-gradient(ellipse at center, #49473f 0%, #333028 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#49473f', endColorstr='#333028',GradientType=1 );
+  /* IE6-8 fallback on horizontal gradient */ }
+  #middle-home .home-middle-col {
+    margin-top: 18x;
+    margin-left: 18px;
+    float: left;
+    margin-right: 0px; }
+  #middle-home #home-middle-col-1 {
+    min-height: 490px; }
+  #middle-home #home-middle-col-2 {
+    width: 30%;
+    height: 100%;
+    position: relative; }
+  #middle-home #home-middle-col-3 {
+    width: 30%; }
+
+#home-desc {
+  background-color: black;
+  padding: 18px; }
+
+ul#menu-main-home-nav li {
+  min-height: 68px;
+  background-color: #709438;
+  border: 1px solid #99a97e;
+  border-radius: 4px;
+  width: 100%;
+  clear: left;
+  color: white;
+  position: relative;
+  -webkit-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  margin-bottom: 11px;
+  padding-left: 50px;
+  padding-top: 7px; }
+  ul#menu-main-home-nav li i {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 45px;
+    height: 66px;
+    background-image: url(../images/yarts-sprites.png);
+    background-position: 0 0; }
+  ul#menu-main-home-nav li a:link, ul#menu-main-home-nav li a:visited, ul#menu-main-home-nav li a:active {
+    font-family: 'Oswald', sans-serif;
+    font-size: 23px;
+    float: left;
+    text-decoration: none;
+    clear: both;
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); }
+  ul#menu-main-home-nav li .menu-item-desc {
+    float: left;
+    color: black;
+    font-size: 12px;
+    clear: left;
+    text-transform: none; }
+ul#menu-main-home-nav li:hover {
+  background-color: #8cb946;
+  cursor: pointer; }
+ul#menu-main-home-nav li.routes-and-schedules i {
+  background-position: -166px -156px; }
+ul#menu-main-home-nav li.routes-and-schedules:hover i {
+  background-position: -166px -217px; }
+ul#menu-main-home-nav li.how-to-ride i {
+  background-position: -7px -156px; }
+ul#menu-main-home-nav li.how-to-ride:hover i {
+  background-position: -7px  -217px; }
+ul#menu-main-home-nav li.travel-connections i {
+  background-position: -217px -156px; }
+ul#menu-main-home-nav li.travel-connections:hover i {
+  background-position: -217px  -217px; }
+ul#menu-main-home-nav li.tickets-and-fares i {
+  background-position: -61px -156px; }
+ul#menu-main-home-nav li.tickets-and-fares:hover i {
+  background-position: -61px  -217px; }
+ul#menu-main-home-nav li.testimonials i {
+  background-position: -112px -156px; }
+ul#menu-main-home-nav li.testimonials:hover i {
+  background-position: -112px  -217px; }
+ul#menu-main-home-nav li.holidays-and-calendar i {
+  background-position: -272px -156px; }
+ul#menu-main-home-nav li.holidays-and-calendar:hover i {
+  background-position: -272px  -217px; }
+
+.news-section {
+  padding: 18px; }
+  .news-section h2 {
+    color: #ede9d0;
+    width: 40%;
+    border-bottom: 1px solid #738157; }
+  .news-section ul {
+    padding-top: 5px; }
+  .news-section li {
+    margin: 15px 15px 35px 0;
+    line-height: 26px;
+    vertical-align: center;
+    background-image: url(../images/news-bullet.png);
+    background-repeat: no-repeat;
+    background-position: 0px center;
+    padding-left: 25px;
+    min-height: 35px; }
+    .news-section li a:link, .news-section li a:active, .news-section li a:visited {
+      color: #ede9d0;
+      text-decoration: none;
+      font-weight: 600; }
+    .news-section li a:hover {
+      text-decoration: underline; }
+  .news-section #home-more-news a:link, .news-section #home-more-news a:active, .news-section #home-more-news a:visited {
+    color: #8cac6f;
+    text-decoration: none; }
+  .news-section #home-more-news a:hover {
+    text-decoration: underline; }
+  .news-section a:link#home-contact-us, .news-section a:active#home-contact-us, .news-section a:visited#home-contact-us {
+    background: #acd373;
+    border: 3px solid #e0eeca;
+    color: #426747;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    float: left;
+    font-weight: 600; }
+  .news-section a:hover#home-contact-us {
+    background: #c3df9a; }
+  .news-section #home-facebook:link,
+  .news-section #home-twitter:link,
+  .news-section #home-youtube:link {
+    margin-top: 2px; }
+  .news-section #home-facebook:link, .news-section #home-facebook:visited, .news-section #home-facebook:active {
+    background-image: url(../images/yarts-sprites.png);
+    background-position: -357px -168px;
+    width: 45px;
+    height: 52px;
+    float: left; }
+  .news-section #home-facebook:hover {
+    background-position: -357px -228px; }
+  .news-section #home-twitter:link, .news-section #home-twitter:visited, .news-section #home-twitter:active {
+    background-image: url(../images/yarts-sprites.png);
+    background-position: -410px -168px;
+    width: 47px;
+    height: 52px;
+    float: left; }
+  .news-section #home-twitter:hover {
+    background-position: -410px -228px; }
+  .news-section #home-youtube:link, .news-section #home-youtube:visited, .news-section #home-youtube:active {
+    background-image: url(../images/yarts-sprites.png);
+    background-position: -465px -168px;
+    width: 52px;
+    height: 52px;
+    float: left; }
+  .news-section #home-youtube:hover {
+    background-position: -465px -228px; }
+  .news-section #home-middle-contact-social {
+    float: left;
+    margin-top: 40px; }
+
+#home-featured-image {
+  width: 100%;
+  margin-top: 50px; }
+
+#home-desc-link:link, #home-desc-link:active, #home-desc-link:visited {
+  color: #8cac6f; }
+
+#wood-bottom-left,
+#wood-bottom-right,
+#wood-top-right,
+#wood-top-left {
+  position: absolute; }
+
+#wood-bottom-left {
+  width: 30px;
+  height: 30px;
+  background-image: url(../images/wood-bottom-left-corner.png);
+  background-position: -10px 0;
+  left: 0;
+  bottom: 0; }
+
+#wood-top-left {
+  width: 30px;
+  height: 30px;
+  background-image: url(../images/wood-top-left-corner.png);
+  background-position: -40px 0;
+  background-repeat: no-repeat;
+  left: 0;
+  top: 0; }
+
+#wood-top-right {
+  width: 30px;
+  height: 30px;
+  background-image: url(../images/wood-top-right-corner.png);
+  background-position: 10px 0;
+  background-repeat: no-repeat;
+  right: 0;
+  top: 0; }
+
+#wood-bottom-right {
+  width: 30px;
+  height: 30px;
+  background-image: url(../images/wood-bottom-right-corner.png);
+  background-position: -20px 0;
+  right: 0;
+  bottom: 0; }
+
+#home-desc {
+  position: relative;
+  color: #d0ebed; }
+
+#home-wood-top {
+  position: relative;
+  overflow: hidden; }
+
+#center-wood-base {
+  width: 500px;
+  margin: 0 auto;
+  height: 20px;
+  background-image: url(../images/wood-wide-thin.jpg); }
+
+#left-wood-base {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 20px;
+  width: 700px;
+  background-image: url(../images/wood-wide-left-corner.png);
+  background-position: left 0; }
+
+#right-wood-base {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 20px;
+  width: 700px;
+  background-image: url(../images/wood-wide-right-corner.png);
+  background-position: right 0; }
+
+#top-title-area {
+  background: rgba(0, 0, 0, 0.5);
+  min-height: 100px;
+  color: white;
+  padding: 10px 24px; }
+
+#breadcrumbs {
+  margin: 0;
+  padding: 0; }
+  #breadcrumbs li {
+    float: left;
+    color: #8eb18c;
+    margin-right: 10px;
+    font-size: .88em; }
+    #breadcrumbs li a:link, #breadcrumbs li a:active, #breadcrumbs li a:visited, #breadcrumbs li a:hover {
+      color: #8eb18c;
+      text-decoration: none; }
+    #breadcrumbs li a:hover {
+      text-decoration: underline; }
+
+#page-title-text {
+  font-size: 35px;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.28); }
+
+.main-subpage-top-menu i {
+  width: 30px;
+  height: 30px;
+  background: blue;
+  float: left; }
+
+.main-subpage-top-menu {
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px; }
+
+.interior #center-wood-base {
+  width: 500px;
+  margin: 0 auto;
+  height: 50px;
+  background-image: url(../images/wood-wide-thin.jpg); }
+.interior #left-wood-base {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 50px;
+  width: 700px;
+  background-image: url(../images/wood-wide-left-corner.png);
+  background-position: left 0; }
+.interior #right-wood-base {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 50px;
+  width: 700px;
+  background-image: url(../images/wood-wide-right-corner.png);
+  background-position: right 0; }
+
+#route-main {
+  background-color: #3b3830;
+  min-height: 200px; }
+
+#route-icon {
+  width: 66px;
+  height: 66px;
+  border-radius: 33px;
+  border: 4px solid white;
+  float: left;
+  clear: left;
+  margin-top: 21px; }
+
+#route-title-holder {
+  float: left;
+  height: 66px;
+  margin-left: 20px;
+  margin-top: 20px; }
+
+#page-title-text {
+  line-height: 24px;
+  margin-top: 5px; }
+
+#page-subtitle-text {
+  font-size: 1.3em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-top: 5px;
+  clear: left; }
+
+.route-triangle {
+  font-size: .7em;
+  position: relative;
+  top: -2px; }
+
+#breadcrumbs .route-triangle {
+  top: 0px; }
+
+#route-selector {
+  float: right; }
+
+#destinations-served {
+  text-transform: uppercase;
+  margin-top: 20px; }
+
+#destinations-served,
+#service-days {
+  float: left;
+  clear: left;
+  font-weight: 600; }
+
+#route-title-info-separator {
+  width: 30%;
+  border-color: #464441;
+  float: left;
+  clear: left;
+  border-right: 0; }
+
+#service-days {
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+  padding-right: 10px;
+  margin-right: 10px; }
+
+#effective_dates {
+  float: left; }
+
+#route-main {
+  padding: 20px;
+  position: relative; }
+
+#route-main-col-left {
+  float: left;
+  width: 64%;
+  margin-right: 20px; }
+
+#route-main-col-right {
+  width: 34%;
+  float: left; }
+
+#route-detail-map img {
+  width: 100%;
+  height: auto;
+  cursor: pointer; }
+
+#route-detail-map.wide-view {
+  clear: both; }
+  #route-detail-map.wide-view img {
+    width: 100%;
+    position: absolute;
+    top: 20px;
+    left: 0; }
+
+.route-box {
+  background: #e7d6c5;
+  min-height: 100px; }
+  .route-box h2 {
+    background-color: #cac0a5;
+    border-bottom: 1px solid #33302c;
+    margin-top: 0;
+    margin-bottom: 0; }
+
+#route-alert-holder {
+  background-color: #edbc38;
+  color: black;
+  margin-bottom: 20px; }
+  #route-alert-holder #alert-title {
+    font-size: 23px;
+    font-weight: 300;
+    padding: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px; }
+    #route-alert-holder #alert-title i {
+      background-image: url(../images/yarts-sprites.png);
+      background-position: -476px -13px;
+      width: 27px;
+      height: 24px;
+      float: left;
+      position: relative;
+      top: 8px;
+      margin-right: 7px;
+      margin-left: 2px; }
+  #route-alert-holder #route-alert-content {
+    display: none; }
+  #route-alert-holder #route-alert-content {
+    background-color: #e9b44c;
+    border-top: 1px solid #e3a11f;
+    padding: 10px; }
+    #route-alert-holder #route-alert-content p:first-of-type {
+      padding-top: 0;
+      margin-top: 0; }
+  #route-alert-holder #route-alert-expander {
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #e3a11f;
+    position: relative;
+    line-height: 25px;
+    cursor: pointer;
+    font-size: 12px; }
+  #route-alert-holder .alert-expand-line {
+    display: inline;
+    position: absolute;
+    width: 25%;
+    height: 1px;
+    border-bottom: 1px solid #636363; }
+  #route-alert-holder .alert-expand-line.left {
+    left: 2.5%;
+    top: 12px; }
+  #route-alert-holder .alert-expand-line.right {
+    right: 2.5%;
+    top: 12px; }
+  #route-alert-holder .expand-triangle {
+    font-size: .7em;
+    position: relative;
+    top: -1px; }
+
 /*********************
 IMPORTING MODULES
 Modules are reusable blocks or elements we use throughout the project.
@@ -910,7 +1456,7 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   position: relative;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-decoration: none;
-  color: white;
+  color: #fff;
   font-size: 0.9em;
   font-size: 34px;
   line-height: 34px;
@@ -922,7 +1468,7 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   -webkit-transition: background-color 0.14s ease-in-out;
   transition: background-color 0.14s ease-in-out; }
   .blue-btn:hover, .comment-reply-link:hover, #submit:hover, .blue-btn:focus, .comment-reply-link:focus, #submit:focus {
-    color: white;
+    color: #fff;
     text-decoration: none; }
   .blue-btn:active, .comment-reply-link:active, #submit:active {
     top: 1px; }
@@ -1026,7 +1572,8 @@ textarea,
   textarea:active,
   .field:focus,
   .field:active {
-    background-color: #f7f8fa; }
+    background-color: #f7f8fa;
+    outline: none; }
   input[type="text"].error, input[type="text"].is-invalid,
   input[type="password"].error,
   input[type="password"].is-invalid,
@@ -1062,7 +1609,7 @@ textarea,
   .field.is-invalid {
     color: #fbe3e4;
     border-color: #fbe3e4;
-    background-color: white;
+    background-color: #fff;
     background-position: 99% center;
     background-repeat: no-repeat;
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo2NDM0NDREQkYwNEIxMUUyOTI4REZGQTEzMzA2MDcyNiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo2NDM0NDREQ0YwNEIxMUUyOTI4REZGQTEzMzA2MDcyNiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQ3ODRGRkE2RjA0QTExRTI5MjhERkZBMTMzMDYwNzI2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjY0MzQ0NERBRjA0QjExRTI5MjhERkZBMTMzMDYwNzI2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+U8iT5wAAAedJREFUeNqk1U9I02Ecx/HtV3aIFAc1hcRDUoGXRAq0oNLA2CrsEFmHbikZu0iQYIFGYAiegkCpLipBxPpDEBMUzB0EhSG2LhG7hMR2GviPgUTvB57Bw8P3+U23B16HPX8+e/b8nt93wezZSMCnhXETF3AcB5BDCnH8Dq98ExcGHcFn8Ah3cdDni+fxnPDv9oAnTB7CKu6VCFXtChZy56LxUjt+jfuB8toSOth9wd7xWAWhqrUjYR/FRTwWJm+iIPT/w7bQf5ljiZnBg45dtKFX6H+LU8gIY8OEV6vgTkStwXWE8BPTGDHGPqNPz2mCfSOOYkA99TvCt1bhGPL68zMcwmncMuape10jrI+q4BbHi/FLn31S9z2x5tRhTc+1W506ipM+T3oRD4X+8+qtc4SqFvL0z/Fr14S+Szjis8bz9Lvvaq8cwS/wwGfdlqfPSWqTiFlX77o13u9Ym1PBs8JAytpRoy44X9Ft9E/gvbA+rYKn8NcaaMVc8UHgBw4b9/iqUQZ6hOAJFbyDcUflmsEX4a6+wTtHGfhAIUqa1U29Zc2BytouThD8x6xuN5CtMPi2CrXLZkZf/HyZoRFCP7n+QVR4PV7uI/AjGghN7OU/r1ilnqILtfpNC+o6vIFljBKYlhb/F2AAgaBsWR5wRiIAAAAASUVORK5CYII=);
@@ -1102,7 +1649,7 @@ textarea,
   .field.is-valid {
     color: #e6efc2;
     border-color: #e6efc2;
-    background-color: white;
+    background-color: #fff;
     background-position: 99% center;
     background-repeat: no-repeat;
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo2NDM0NDRERkYwNEIxMUUyOTI4REZGQTEzMzA2MDcyNiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo2NDM0NDRFMEYwNEIxMUUyOTI4REZGQTEzMzA2MDcyNiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjY0MzQ0NERERjA0QjExRTI5MjhERkZBMTMzMDYwNzI2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjY0MzQ0NERFRjA0QjExRTI5MjhERkZBMTMzMDYwNzI2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+7olkTQAAAfhJREFUeNqklU9oE0EUhzdroWjw0tBeWlDxkEaIp55TsCU9VKIgCrHBelA8CQ1Kr1WPbZrQ3gqtQqvGqxpQc2jBk6BIIaAGD4qNCKURpDSKiPi98gLDsJt//uBjsztvfnk7895sIPAw6/joGMThFJyAXn2+A+9gA57/TaY/eU0OeBgfhGm4DiGnsb7DAszxBz/NAdcKjMJLuNWCqagHbsscN5+L+hmH4QkMOe1L5jzFfNA2PgT34ajTuY7AGuZB0/hmh5m+gS0r8xv1zRvg+gGCHZiOwnF4DP3iB3sQkYxPd2C6CWfhB9Xwlus5+K1j4jXuaq3a+gM1H9OPcAa+7q9lPidZJqHbiIm7Wg22rsEI7FrPSzAMX/T+ADyAKSsu7Fr1KplehLvwCs5DvfBf65p+MypqRbO1FXK9utH4/QKuaqYTsG3E3INJv00Q46px3+XxanJ/Ute2/vqP4FKDza2KcdljIKdnhS0xXYULTaqmLMZFn8FFSFtvt6x70ExFCS5oUXspq2ssa7oEl1swFa+CGFdgtkHgPDyDKy02zyxNU6lXRUZb1EuHYayNNs+Yh5B0WQo+/8fpJnNTZFuzz2OpjoQ2QruSOQlMy35fEGmEGMxY9e1brxobw7TkWA1h6xfckUPb+JhGoE/Hpfvew7qUld/H9J8AAwDpw3WYrxcZ3QAAAABJRU5ErkJggg==);
@@ -1246,13 +1793,20 @@ and will be used across all viewports.
 /*********************
 GENERAL STYLES
 *********************/
+html {
+  min-width: 1050px; }
+
 body {
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
   font-size: 100%;
   line-height: 1.5;
   color: #5c6b80;
-  background-color: #eaedf2;
-  -webkit-font-smoothing: antialiased; }
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url(../images/mountains.jpg);
+  background-position: center top;
+  background-color: black;
+  background-repeat: no-repeat; }
 
 /********************
 WORDPRESS BODY CLASSES
@@ -1357,13 +1911,17 @@ h5, .h5 {
 /*********************
 HEADER STYLES
 *********************/
-.header {
-  background-color: #323944; }
-
 #logo {
-  margin: 0.75em 0; }
+  margin: 0.75em 0;
+  background-image: url(../images/yarts-sprites.png);
+  width: 452px;
+  height: 140px;
+  float: right;
+  margin-top: 60px;
+  margin-right: 5%;
+  cursor: pointer; }
   #logo a {
-    color: white; }
+    color: #fff; }
 
 /*********************
 NAVIGATION STYLES
@@ -1391,7 +1949,7 @@ and more scalable.
     */ }
     .nav li a {
       display: block;
-      color: white;
+      color: #fff;
       text-decoration: none;
       padding: 0.75em;
       /*
@@ -1412,10 +1970,10 @@ POSTS & CONTENT STYLES
   margin-top: 1.5em; }
 
 .hentry {
-  background-color: white;
+  background-color: #fff;
   border-radius: 3px;
   margin-bottom: 1.5em;
-  border: 1px solid #cccccc; }
+  border: 1px solid #ccc; }
   .hentry header {
     border-bottom: 1px solid #f8f9fa;
     padding: 1.5em; }
@@ -1545,7 +2103,7 @@ PAGE NAVI STYLES
   text-align: center; }
   .pagination ul {
     display: inline-block;
-    background-color: white;
+    background-color: #fff;
     white-space: nowrap;
     padding: 0;
     clear: both;
@@ -1570,12 +2128,12 @@ PAGE NAVI STYLES
     color: #2980b9; }
     .pagination a:hover, .pagination a:focus, .pagination span:hover, .pagination span:focus {
       background-color: #2980b9;
-      color: white; }
+      color: #fff; }
   .pagination .current {
     cursor: default;
     color: #5c6b80; }
     .pagination .current:hover, .pagination .current:focus {
-      background-color: white;
+      background-color: #fff;
       color: #5c6b80; }
 
 /* end .bones_page_navi */
@@ -1647,7 +2205,7 @@ COMMENT STYLES
     margin-left: 7px;
     padding: 7px; }
   .comment.odd {
-    background-color: white; }
+    background-color: #fff; }
   .comment.even {
     background: #f8f9fa; }
 
@@ -1723,10 +2281,10 @@ SIDEBARS & ASIDES
   /* deep nesting */ }
 
 .no-widgets {
-  background-color: white;
+  background-color: #fff;
   padding: 1.5em;
   text-align: center;
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   border-radius: 2px;
   margin-bottom: 1.5em; }
 
@@ -1748,245 +2306,86 @@ override these styles for the desktop
 view.
 */
 /* end .footer-links */
+#inner-content {
+  background: url(../images/wood1.jpg);
+  padding: 0 18px; }
+
+.footer {
+  background: url(../images/wood1.jpg);
+  position: relative;
+  margin-bottom: 20px; }
+  .footer #footer-left-corner {
+    background: url(../images/bottom-left-corner.png);
+    width: 30px;
+    height: 20px;
+    float: left; }
+  .footer #footer-right-corner {
+    float: right;
+    background: url(../images/bottom-right-corner.png);
+    background-position: -28px;
+    width: 30px;
+    height: 20px; }
+
+#attributions {
+  float: right;
+  font-size: .8em;
+  padding-top: 18px;
+  padding-right: 20px; }
+  #attributions a:link, #attributions a:visited, #attributions a:active {
+    color: rgba(155, 155, 155, 0.5); }
+
+#home-facebook:link, #home-facebook:visited, #home-facebook:active {
+  margin-left: 5px; }
+
 /*********************
 LARGER MOBILE DEVICES
 This is for devices like the Galaxy Note or something that's
 larger than an iPhone but smaller than a tablet. Let's call them
 tweeners.
 *********************/
-@media only screen and (min-width: 481px) {
-  /******************************************************************
-  Site Name:
-  Author:
-  
-  Stylesheet: 481px and Up Stylesheet
-  
-  This stylesheet is loaded for larger devices. It's set to
-  481px because at 480px it would load on a landscaped iPhone.
-  This isn't ideal because then you would be loading all those
-  extra styles on that same mobile connection.
-  
-  A word of warning. This size COULD be a larger mobile device,
-  so you still want to keep it pretty light and simply expand
-  upon your base.scss styles.
-  
-  ******************************************************************/
-  /*
-  IMPORTANT NOTE ABOUT SASS 3.3 & UP
-  You can't use @extend within media queries
-  anymore, so just be aware that if you drop
-  them in here, they won't work.
-  */
-  /*********************
-  NAVIGATION STYLES
-  *********************/
-  /* .menu is clearfixed inside mixins.scss */
-  .menu {
-    /* end .menu ul */ }
-    .menu ul {
-      /* end .menu ul li */
-      /* highlight current page */
-      /* end current highlighters */ }
-      .menu ul li {
-        /*
-        plan your menus and drop-downs wisely.
-        */ }
-        .menu ul li a {
-          /*
-          you can use hover styles here even though this size
-          has the possibility of being a mobile device.
-          */ }
-
-  /* end .menu */
-  /*********************
-  POSTS & CONTENT STYLES
-  *********************/
-  /* entry content */
-  .entry-content {
-    /* at this larger size, we can start to align images */ }
-    .entry-content .alignleft, .entry-content img.alignleft {
-      margin-right: 1.5em;
-      display: inline;
-      float: left; }
-    .entry-content .alignright, .entry-content img.alignright {
-      margin-left: 1.5em;
-      display: inline;
-      float: right; }
-    .entry-content .aligncenter, .entry-content img.aligncenter {
-      margin-right: auto;
-      margin-left: auto;
-      display: block;
-      clear: both; }
-
-  /* end .entry-content */
-  /*********************
-  FOOTER STYLES
-  *********************/
-  /*
-  check your menus here. do they look good?
-  do they need tweaking?
-  */
-  /* end .footer-links */ }
 /*********************
 TABLET & SMALLER LAPTOPS
 This is the average viewing window. So Desktops, Laptops, and
 in general anyone not viewing on a mobile device. Here's where
 you can add resource intensive styles.
 *********************/
-@media only screen and (min-width: 768px) {
-  /******************************************************************
-  Site Name:
-  Author:
-  
-  Stylesheet: Tablet & Small Desktop Stylesheet
-  
-  Here's where you can start getting into the good stuff.
-  This size will work on iPads, other tablets, and desktops.
-  So you can start working with more styles, background images,
-  and other resources. You'll also notice the grid starts to
-  come into play. Have fun!
-  
-  ******************************************************************/
-  /*********************
-  GENERAL STYLES
-  *********************/
-  /*********************
-  LAYOUT & GRID STYLES
-  *********************/
-  .wrap {
-    width: 760px; }
-
-  /*********************
-  HEADER STYLES
-  *********************/
-  /*********************
-  NAVIGATION STYLES
-  *********************/
-  .nav {
-    border: 0;
-    /* end .menu ul li */
-    /* highlight current page */
-    /* end current highlighters */ }
-    .nav ul {
-      background: #323944;
-      margin-top: 0; }
-    .nav li {
-      float: left;
-      position: relative;
-      /*
-      plan your menus and drop-downs wisely.
-      */
-      /* showing sub-menus */ }
-      .nav li a {
-        border-bottom: 0;
-        /*
-        you can use hover styles here even though this size
-        has the possibility of being a mobile device.
-        */ }
-        .nav li a:hover, .nav li a:focus {
-          color: white;
-          text-decoration: underline; }
-      .nav li ul.sub-menu,
-      .nav li ul.children {
-        margin-top: 0;
-        border: 1px solid #ccc;
-        border-top: 0;
-        position: absolute;
-        visibility: hidden;
-        z-index: 8999;
-        /* highlight sub-menu current page */ }
-        .nav li ul.sub-menu li,
-        .nav li ul.children li {
-          /*
-          if you need to go deeper, go nuts
-          just remember deeper menus suck
-          for usability. k, bai.
-          */ }
-          .nav li ul.sub-menu li a,
-          .nav li ul.children li a {
-            padding-left: 10px;
-            border-right: 0;
-            display: block;
-            width: 180px;
-            border-bottom: 1px solid #ccc; }
-          .nav li ul.sub-menu li:last-child a,
-          .nav li ul.children li:last-child a {
-            border-bottom: 0; }
-          .nav li ul.sub-menu li ul,
-          .nav li ul.children li ul {
-            top: 0;
-            left: 100%; }
-      .nav li:hover > ul {
-        top: auto;
-        visibility: visible; }
-
-  /* end .nav */
-  /*********************
-  SIDEBARS & ASIDES
-  *********************/
-  .sidebar {
-    margin-top: 2.2em; }
-
-  .widgettitle {
-    border-bottom: 2px solid #444;
-    margin-bottom: 0.75em; }
-
-  .widget {
-    padding: 0 10px;
-    margin: 2.2em 0; }
-    .widget ul li {
-      margin-bottom: 0.75em;
-      /* deep nesting */ }
-      .widget ul li ul {
-        margin-top: 0.75em;
-        padding-left: 1em; }
-
-  /* links widget */
-  /* meta widget */
-  /* pages widget */
-  /* recent-posts widget */
-  /* archives widget */
-  /* tag-cloud widget */
-  /* calendar widget */
-  /* category widget */
-  /* recent-comments widget */
-  /* search widget */
-  /* text widget */
-  /*********************
-  FOOTER STYLES
-  *********************/
-  /*
-  you'll probably need to do quite a bit
-  of overriding here if you styled them for
-  mobile. Make sure to double check these!
-  */
-  .footer-links ul li {
-    /*
-    be careful with the depth of your menus.
-    it's very rare to have multi-depth menus in
-    the footer.
-    */ }
-
-  /* end .footer-links */ }
 /*********************
 DESKTOP
 This is the average viewing window. So Desktops, Laptops, and
 in general anyone not viewing on a mobile device. Here's where
 you can add resource intensive styles.
 *********************/
-@media only screen and (min-width: 1030px) {
-  /******************************************************************
-  Site Name:
-  Author:
-  
-  Stylesheet: Desktop Stylsheet
-  
-  This is the desktop size. It's larger than an iPad so it will only
-  be seen on the Desktop.
-  
-  ******************************************************************/
-  .wrap {
-    width: 1040px; } }
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Desktop Stylsheet
+
+This is the desktop size. It's larger than an iPad so it will only
+be seen on the Desktop.
+
+******************************************************************/
+.wrap {
+  width: 1040px; }
+
+#top-home #map-box {
+  width: 100%; }
+
+#home-middle-col-1 {
+  width: 32.7%;
+  margin-left: 18px; }
+
+.footer-links {
+  float: left; }
+  .footer-links a:hover {
+    text-decoration: underline; }
+
+.nav li {
+  float: left; }
+
+.source-org.copyright {
+  float: right; }
+
 /*********************
 LARGE VIEWING SIZE
 This is for the larger monitors and possibly full screen viewers.
@@ -2001,7 +2400,46 @@ This is for the larger monitors and possibly full screen viewers.
   You can add some advanced styles here if you like. This kicks in
   on larger screens.
   
-  ******************************************************************/ }
+  ******************************************************************/
+  .wrap {
+    width: 1240px; }
+
+  #top-home #promo-box {
+    display: inherit; }
+  #top-home #map-box {
+    width: 64.5%; }
+
+  #home-middle-col-1 {
+    width: 32.8%; }
+
+  #middle-home #home-middle-col-2 {
+    width: 30.5%; }
+  #middle-home #home-middle-col-3 {
+    width: 30.5%; }
+
+  #home-facebook:link, #home-facebook:visited, #home-facebook:active {
+    margin-left: 20px; } }
+@media only screen and (min-width: 1532px) {
+  /******************************************************************
+  Site Name: 
+  Author: 
+  
+  Stylesheet: Super Large Monitor Stylesheet
+  
+  You can add some advanced styles here if you like. This kicks in
+  on larger screens.
+  
+  ******************************************************************/
+  .wrap {
+    width: 1533px; }
+
+  #top-home #map-box {
+    width: 64.7%; }
+
+  #middle-home #home-middle-col-2 {
+    width: 31.1%; }
+  #middle-home #home-middle-col-3 {
+    width: 31.1%; } }
 /*********************
 RETINA (2x RESOLUTION DEVICES)
 This applies to the retina iPhone (4s) and iPad (2,3) along with

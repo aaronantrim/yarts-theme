@@ -12,3 +12,31 @@ be seen on the Desktop.
 .wrap {
   width: 1040px;
 }
+
+#top-home {
+	
+	#map-box {
+			width: 100%; //504/1533
+		}
+}
+
+#home-middle-col-1 {
+	width: 32.7%; //504/1533
+	margin-left: 18px;
+}
+
+.footer-links {
+float: left;
+	a:hover {
+		text-decoration: underline;
+	}
+}
+
+.nav li {
+	float: left;
+}
+
+.source-org.copyright {
+float: right;
+}
+

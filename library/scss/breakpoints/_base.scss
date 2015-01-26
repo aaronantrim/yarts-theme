@@ -15,14 +15,22 @@ and will be used across all viewports.
 GENERAL STYLES
 *********************/
 
+html {
+  min-width: 1050px;
+}
+
 body {
-	font-family: $lato;
+	font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
 	font-size: 100%;
 	line-height: 1.5;
 	color: $text-color;
-	background-color: $gray;
+
   	-webkit-font-smoothing: antialiased;
   	-moz-osx-font-smoothing: grayscale;
+  	background-image: url(../images/mountains.jpg);
+  	background-position: center top;
+  	background-color: black;
+  	background-repeat: no-repeat;
 }
 
 /********************
@@ -153,11 +161,18 @@ HEADER STYLES
 *********************/
 
 .header {
-	background-color: $black;
+	//background-color: $black;
 }
 
 	#logo {
 		margin: 0.75em 0;
+		background-image: url(../images/yarts-sprites.png);
+		width: 452px;
+		height: 140px;
+		float: right;
+		margin-top: 60px;
+		margin-right: 5%;
+		cursor: pointer;
 
 		a {
 			color: $white;
@@ -887,3 +902,49 @@ FOOTER STYLES
 
 
 	.copyright {}
+	
+	#inner-content {
+		background: url(../images/wood1.jpg);
+		padding: 0 18px; 
+	}
+	
+	
+	
+	.footer {
+		background: url(../images/wood1.jpg);
+		position: relative;
+		
+		margin-bottom: 20px;
+		#footer-left-corner {
+			background: url(../images/bottom-left-corner.png);
+			width: 30px;
+			height: 20px;
+			float: left;
+
+		}
+		#footer-right-corner {
+			float: right;
+			background: url(../images/bottom-right-corner.png);
+			background-position: -28px;
+			width: 30px; 
+			height: 20px;
+			
+		}
+	}
+	
+	
+	#attributions {
+		float: right;
+		font-size: .8em;
+		a:link, a:visited, a:active {
+			color: rgba(155,155,155,.5);
+		}
+		padding-top: 18px;
+		padding-right: 20px;
+	}
+
+
+#home-facebook:link,#home-facebook:visited,#home-facebook:active {
+	
+		margin-left: 5px;
+	}

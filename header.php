@@ -11,7 +11,7 @@
 		<?php // force Internet Explorer to use the latest rendering engine available ?>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-		<title><?php wp_title(''); ?></title>
+		<title><?php wp_title(' : ' ); ?></title>
 
 		<?php // mobile meta (hooray!) ?>
 		<meta name="HandheldFriendly" content="True">
@@ -20,7 +20,7 @@
 
 		<?php // icons & favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) ?>
 		<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/library/images/apple-touch-icon.png">
-		<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png">
+		<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png?v2">
 		<!--[if IE]>
 			<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
 		<![endif]-->
@@ -30,17 +30,31 @@
             <meta name="theme-color" content="#121212">
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+		<link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+
+
+		<!--[if gte IE 9]>
+		  <style type="text/css">
+			.gradient {
+			   filter: none;
+			}
+		  </style>
+		<![endif]-->
 
 		<?php // wordpress head functions ?>
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="<?php echo get_template_directory_uri(); ?>/library/js/jquery-selectBox/jquery.selectBox.js" type="text/javascript"></script>
+		<link href='"<?php echo get_template_directory_uri(); ?>/library/js/jquery-selectBox/jquery.selectBox.css' rel='stylesheet' type='text/css'>
 		<?php wp_head(); ?>
+		<script src="<?php echo get_template_directory_uri(); ?>/library/js/yarts.js"></script> 
 		<?php // end of wordpress head ?>
 
 		<?php // drop Google Analytics Here ?>
 		<?php // end analytics ?>
-
+<?php  ?>
 	</head>
 
-	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
+	<body <?php if (!is_home()) {body_class('interior');} else {body_class();} ?> itemscope itemtype="http://schema.org/WebPage">
 
 		<div id="container">
 
@@ -49,7 +63,7 @@
 				<div id="inner-header" class="wrap cf">
 
 					<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
-					<p id="logo" class="h1" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></p>
+					<a href="<?php echo get_site_url();?>"><p id="logo" class="h1 linked-div" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" rel="nofollow"></a></p></a>
 
 					<?php // if you'd like to use the site description you can un-comment it below ?>
 					<?php // bloginfo('description'); ?>

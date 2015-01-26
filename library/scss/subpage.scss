@@ -1,0 +1,84 @@
+#top-title-area {
+	background: rgba(0,0,0,.5);
+	min-height: 100px; 
+	color: white;
+	padding: 10px 24px;
+}  
+
+#breadcrumbs {
+	margin:0;
+	padding: 0;
+	li {
+		float: left;
+		color: #8eb18c;
+		margin-right: 10px;
+		font-size: .88em;
+		a:link, a:active, a:visited, a:hover {
+			color: #8eb18c;
+			text-decoration: none;
+		}
+		a:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+#page-title-text {
+	font-size: 35px;
+	text-transform: uppercase;
+	color: white;
+	font-weight: 600;
+	letter-spacing: 5px;
+	text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.28);
+}
+
+
+.main-subpage-top-menu {
+	i {
+		width: 30px;
+		height: 30px;
+		background: blue;
+		float: left;
+		
+	}
+
+}
+
+.main-subpage-top-menu {  
+	position: absolute;
+	top: 0; 
+	z-index: 10;
+		
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+$rimheight: 50px;
+.interior {
+	#center-wood-base {
+		width: 500px;
+		margin: 0 auto;
+		height: $rimheight;
+		background-image: url(../images/wood-wide-thin.jpg);
+	}
+	#left-wood-base {
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: $rimheight;
+		width: 700px;
+		background-image: url(../images/wood-wide-left-corner.png);
+		background-position: left 0;
+	} 
+	#right-wood-base {
+		position: absolute;
+		right: 0;
+		top: 0;
+		height: $rimheight;
+		width: 700px;
+		background-image: url(../images/wood-wide-right-corner.png);
+		background-position: right 0;
+	}
+}
+

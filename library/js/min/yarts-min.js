@@ -1,0 +1,1 @@
+$(document).ready(function(){$(".linked-div").click(function(){window.location=$(this).find("a").attr("href")}),$("#route-detail-map").click(function(){$(this).toggleClass("wide-view"),$(this).css("height",$(this).find("img").height())})});
