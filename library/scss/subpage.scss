@@ -3,6 +3,7 @@
 	min-height: 100px; 
 	color: white;
 	padding: 10px 24px;
+	border-top: 5px solid black;
 }  
 
 #breadcrumbs {
@@ -13,9 +14,11 @@
 		color: #8eb18c;
 		margin-right: 10px;
 		font-size: .88em;
+		text-shadow: 0px 0px 2px rgba(0,0,0, 1);
 		a:link, a:active, a:visited, a:hover {
 			color: #8eb18c;
-			text-decoration: none;
+			text-decoration: underline;
+			
 		}
 		a:hover {
 			text-decoration: underline;
@@ -33,16 +36,7 @@
 }
 
 
-.main-subpage-top-menu {
-	i {
-		width: 30px;
-		height: 30px;
-		background: blue;
-		float: left;
-		
-	}
 
-}
 
 .main-subpage-top-menu {  
 	position: absolute;
@@ -54,7 +48,7 @@
 	letter-spacing: 1px;
 }
 
-$rimheight: 50px;
+$rimheight: 48px;
 .interior {
 	#center-wood-base {
 		width: 500px;
@@ -79,6 +73,88 @@ $rimheight: 50px;
 		width: 700px;
 		background-image: url(../images/wood-wide-right-corner.png);
 		background-position: right 0;
+	}
+}
+
+.main-subpage-top-menu { 
+	.nav {
+	
+		li {
+			border-right: 1px solid rgba(0,0,0,.4);
+			padding-left: 0;
+			
+		}
+		li:hover {
+			background: rgba(0,0,0,.1);
+		}
+		li.menu-item-home {
+			margin-left: 15px; 
+		}
+		 i {
+			float: left;
+			background-image: url(../images/yarts-sprites.png);
+			width: 32px;
+			height: 32px;
+			margin-right: 3px;
+			position: relative;
+			top: -2px;
+		 }
+	 
+	 
+	 	$subpage-bg-y: -320px;
+	 	$subpage-bg-y-hover: -369px;
+	 
+		 a:link,a:visited, a:active{
+		 	padding-left: 3px;
+		 	padding-right: 8px;
+			i.routes-schedules {
+				background-position: -13px $subpage-bg-y;
+				margin-left: 2px;
+			}
+			i.testimonials {
+				background-position: -47px $subpage-bg-y;
+			}
+			i.tickets-fares {
+				background-position: -83px $subpage-bg-y;
+			}
+			i.how-to-ride {
+				background-position: -154px $subpage-bg-y;
+			}
+			i.travel-connections {
+				background-position: -126px $subpage-bg-y;
+			}
+			i.holidays-calendar {
+				background-position: -190px $subpage-bg-y;
+			}
+			i.home{
+				background-position: -251px $subpage-bg-y;
+				margin-right: 5px;
+			}
+		 }
+		 a:hover {
+			color: lighten(#b5d18a,10); 
+			 i.routes-schedules {
+				background-position: -13px $subpage-bg-y-hover;
+			 }
+			 i.testimonials {
+				background-position: -47px $subpage-bg-y-hover;
+			}
+			i.tickets-fares {
+				background-position: -83px $subpage-bg-y-hover;
+			}
+			i.how-to-ride {
+				background-position: -154px $subpage-bg-y-hover;
+			}
+			i.travel-connections {
+				background-position: -126px $subpage-bg-y-hover;
+			}
+			i.holidays-calendar {
+				background-position: -190px $subpage-bg-y-hover;
+			}
+			i.home{
+				background-position: -251px $subpage-bg-y-hover;
+			}
+		 }
 	}
 }
 

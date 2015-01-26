@@ -487,7 +487,7 @@ class My_SubPage_Walker extends Walker_Nav_Menu
 		$attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
 
 		$item_output = $args->before;
-		$item_output .= '<i class="'.slugify($item->title).'"></i><a'. $attributes .'>';
+		$item_output .= '<a'. $attributes .'><i class="'.slugify($item->title).'"></i>';
 		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
 		$item_output .= '</a>';
 		$item_output .= '';

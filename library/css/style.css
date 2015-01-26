@@ -1172,7 +1172,8 @@ ul#menu-main-home-nav li.holidays-and-calendar:hover i {
   background: rgba(0, 0, 0, 0.5);
   min-height: 100px;
   color: white;
-  padding: 10px 24px; }
+  padding: 10px 24px;
+  border-top: 5px solid black; }
 
 #breadcrumbs {
   margin: 0;
@@ -1181,10 +1182,11 @@ ul#menu-main-home-nav li.holidays-and-calendar:hover i {
     float: left;
     color: #8eb18c;
     margin-right: 10px;
-    font-size: .88em; }
+    font-size: .88em;
+    text-shadow: 0px 0px 2px black; }
     #breadcrumbs li a:link, #breadcrumbs li a:active, #breadcrumbs li a:visited, #breadcrumbs li a:hover {
       color: #8eb18c;
-      text-decoration: none; }
+      text-decoration: underline; }
     #breadcrumbs li a:hover {
       text-decoration: underline; }
 
@@ -1195,12 +1197,6 @@ ul#menu-main-home-nav li.holidays-and-calendar:hover i {
   font-weight: 600;
   letter-spacing: 5px;
   text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.28); }
-
-.main-subpage-top-menu i {
-  width: 30px;
-  height: 30px;
-  background: blue;
-  float: left; }
 
 .main-subpage-top-menu {
   position: absolute;
@@ -1213,13 +1209,13 @@ ul#menu-main-home-nav li.holidays-and-calendar:hover i {
 .interior #center-wood-base {
   width: 500px;
   margin: 0 auto;
-  height: 50px;
+  height: 48px;
   background-image: url(../images/wood-wide-thin.jpg); }
 .interior #left-wood-base {
   position: absolute;
   left: 0;
   top: 0;
-  height: 50px;
+  height: 48px;
   width: 700px;
   background-image: url(../images/wood-wide-left-corner.png);
   background-position: left 0; }
@@ -1227,10 +1223,61 @@ ul#menu-main-home-nav li.holidays-and-calendar:hover i {
   position: absolute;
   right: 0;
   top: 0;
-  height: 50px;
+  height: 48px;
   width: 700px;
   background-image: url(../images/wood-wide-right-corner.png);
   background-position: right 0; }
+
+.main-subpage-top-menu .nav li {
+  border-right: 1px solid rgba(0, 0, 0, 0.4);
+  padding-left: 0; }
+.main-subpage-top-menu .nav li:hover {
+  background: rgba(0, 0, 0, 0.1); }
+.main-subpage-top-menu .nav li.menu-item-home {
+  margin-left: 15px; }
+.main-subpage-top-menu .nav i {
+  float: left;
+  background-image: url(../images/yarts-sprites.png);
+  width: 32px;
+  height: 32px;
+  margin-right: 3px;
+  position: relative;
+  top: -2px; }
+.main-subpage-top-menu .nav a:link, .main-subpage-top-menu .nav a:visited, .main-subpage-top-menu .nav a:active {
+  padding-left: 3px;
+  padding-right: 8px; }
+  .main-subpage-top-menu .nav a:link i.routes-schedules, .main-subpage-top-menu .nav a:visited i.routes-schedules, .main-subpage-top-menu .nav a:active i.routes-schedules {
+    background-position: -13px -320px;
+    margin-left: 2px; }
+  .main-subpage-top-menu .nav a:link i.testimonials, .main-subpage-top-menu .nav a:visited i.testimonials, .main-subpage-top-menu .nav a:active i.testimonials {
+    background-position: -47px -320px; }
+  .main-subpage-top-menu .nav a:link i.tickets-fares, .main-subpage-top-menu .nav a:visited i.tickets-fares, .main-subpage-top-menu .nav a:active i.tickets-fares {
+    background-position: -83px -320px; }
+  .main-subpage-top-menu .nav a:link i.how-to-ride, .main-subpage-top-menu .nav a:visited i.how-to-ride, .main-subpage-top-menu .nav a:active i.how-to-ride {
+    background-position: -154px -320px; }
+  .main-subpage-top-menu .nav a:link i.travel-connections, .main-subpage-top-menu .nav a:visited i.travel-connections, .main-subpage-top-menu .nav a:active i.travel-connections {
+    background-position: -126px -320px; }
+  .main-subpage-top-menu .nav a:link i.holidays-calendar, .main-subpage-top-menu .nav a:visited i.holidays-calendar, .main-subpage-top-menu .nav a:active i.holidays-calendar {
+    background-position: -190px -320px; }
+  .main-subpage-top-menu .nav a:link i.home, .main-subpage-top-menu .nav a:visited i.home, .main-subpage-top-menu .nav a:active i.home {
+    background-position: -251px -320px;
+    margin-right: 5px; }
+.main-subpage-top-menu .nav a:hover {
+  color: #ccdfaf; }
+  .main-subpage-top-menu .nav a:hover i.routes-schedules {
+    background-position: -13px -369px; }
+  .main-subpage-top-menu .nav a:hover i.testimonials {
+    background-position: -47px -369px; }
+  .main-subpage-top-menu .nav a:hover i.tickets-fares {
+    background-position: -83px -369px; }
+  .main-subpage-top-menu .nav a:hover i.how-to-ride {
+    background-position: -154px -369px; }
+  .main-subpage-top-menu .nav a:hover i.travel-connections {
+    background-position: -126px -369px; }
+  .main-subpage-top-menu .nav a:hover i.holidays-calendar {
+    background-position: -190px -369px; }
+  .main-subpage-top-menu .nav a:hover i.home {
+    background-position: -251px -369px; }
 
 #route-main {
   background-color: #3b3830;
@@ -1274,8 +1321,31 @@ ul#menu-main-home-nav li.holidays-and-calendar:hover i {
 #route-selector {
   float: right; }
 
+#route-pdf-link {
+  float: right;
+  clear: right;
+  width: 300px;
+  text-align: right; }
+  #route-pdf-link a:link, #route-pdf-link a:visited, #route-pdf-link a:active, #route-pdf-link a:hover {
+    color: white;
+    text-decoration: none; }
+    #route-pdf-link a:link i, #route-pdf-link a:visited i, #route-pdf-link a:active i, #route-pdf-link a:hover i {
+      background-image: url(../images/yarts-sprites.png);
+      background-position: -511px -11px;
+      float: right;
+      width: 30px;
+      height: 40px;
+      margin-left: 8px;
+      position: relative;
+      top: 5px; }
+  #route-pdf-link a:hover {
+    text-decoration: underline; }
+    #route-pdf-link a:hover i {
+      background-position: -548px -11px; }
+
 #destinations-served {
   text-transform: uppercase;
+  letter-spacing: 2px;
   margin-top: 20px; }
 
 #destinations-served,
@@ -1334,6 +1404,11 @@ ul#menu-main-home-nav li.holidays-and-calendar:hover i {
     margin-top: 0;
     margin-bottom: 0; }
 
+.route-box-shadow {
+  -webkit-box-shadow: 0px 3px 4px 0px #292721;
+  -moz-box-shadow: 0px 3px 4px 0px #292721;
+  box-shadow: 0px 3px 4px 0px #292721; }
+
 #route-alert-holder {
   background-color: #edbc38;
   color: black;
@@ -1380,10 +1455,10 @@ ul#menu-main-home-nav li.holidays-and-calendar:hover i {
     border-bottom: 1px solid #636363; }
   #route-alert-holder .alert-expand-line.left {
     left: 2.5%;
-    top: 12px; }
+    top: 13px; }
   #route-alert-holder .alert-expand-line.right {
     right: 2.5%;
-    top: 12px; }
+    top: 13px; }
   #route-alert-holder .expand-triangle {
     font-size: .7em;
     position: relative;

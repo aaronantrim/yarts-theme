@@ -78,7 +78,20 @@
 							wp_reset_postdata();
 							?>
 						
-					</div><!--end #route-selector -->	
+					</div><!--end #route-selector -->
+					
+					
+				<?php	$file = get_field('route_guide_pdf');
+
+// view array of data
+
+$bytesize = filesize( get_attached_file( $file ) );
+$file_url = get_attached_file( $file );
+$bytesize = number_format($bytesize/1000000,1).' MB';
+
+?>
+
+<div id="route-pdf-link"><a href="<?php echo $file_url; ?>"><i></i>Download <?php the_field('route_short_name'); ?> <br />Service Guide [PDF, <?php echo $bytesize; ?>]</a></div>	
 					<br style="clear:both;" />
 				</div> <!-- end #top-title-area -->
 				
@@ -86,13 +99,13 @@
 				<div id="route-main">
 					<div id="route-main-col-left">
 					
-						<div id="route-detail-map" class="route-box">
+						<div id="route-detail-map" class="route-box route-box-shadow">
 							<h2><?php echo get_field('route_short_name'); ?> Detail Map <span class="click-message">(Click to enlarge)</span></h2>
 							<?php echo get_the_post_thumbnail( $post->ID, 'full' );  ?>
 						</div><!-- end #route-main-col-left -->
 					</div>
 					<div id="route-main-col-right">
-						<div id="route-alert-holder">
+						<div id="route-alert-holder" class="route-box-shadow">
 							<div id="alert-title">
 								<i></i>
 								<strong>Service Alert:</strong> Many Bears Blocking Many Roads
@@ -107,10 +120,10 @@
 								<span class="alert-expand-line left"></span> <span class="expand-triangle">&#9660;</span> <span id="alert-expand-text">Click to Expand</span> <span class="expand-triangle">&#9660;</span> <span class="alert-expand-line right"></span>
 							</div><!-- #route-alert-expander -->
 						</div>
-						<div id="schedule-box" class="route-box">
+						<div id="schedule-box" class="route-box route-box-shadow">
 						<h2>Schedule <span class="click-message">(Click to pop-up a schedule for each route)</span></h2>
 						</div><!-- end schedule box"-->
-						<div id="fares-box" class="route-box">
+						<div id="fares-box" class="route-box route-box-shadow">
 						<h2>fares</h2>
 						</div><!-- end fares box" -->
 					</div>
