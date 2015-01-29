@@ -124,9 +124,13 @@ $bytesize = number_format($bytesize/1000000,1).' MB';
 						</div>
 						<div id="schedule-box" class="route-box route-box-shadow">
 					
-								<h2>Schedule <span class="click-message">(Click to pop-up a schedule for each route)</span></h2>
+								<h2>Schedules <span class="click-message">(Click to pop-up a schedule for each route)</span></h2>
 								<div class="interior">
 								<div id="route-schedule-info">
+									<ul>
+										<li>&#9632; <?php the_field('route_service_days'); ?></li>
+										<li>&#9632; <?php the_field('route_effective_dates'); ?></li>
+									</ul>
 								</div><!-- end #route-schedule-info -->
 								<div id="route-timetable-links-holder">
 									<ul>
