@@ -48,7 +48,7 @@
 	letter-spacing: 1px;
 }
 
-$rimheight: 48px;
+$rimheight: 53px;
 .interior {
 	#center-wood-base {
 		width: 500px;
@@ -82,13 +82,15 @@ $rimheight: 48px;
 		li {
 			border-right: 1px solid rgba(0,0,0,.4);
 			padding-left: 0;
+			margin-top: 7px;
 			
 		}
 		li:hover {
 			background: rgba(0,0,0,.1);
 		}
 		li.menu-item-home {
-			margin-left: 15px; 
+			margin-left: 15px;
+			border-left: 1px solid rgba(0,0,0,.4); 
 		}
 		 i {
 			float: left;
@@ -111,7 +113,7 @@ $rimheight: 48px;
 				background-position: -13px $subpage-bg-y;
 				margin-left: 2px;
 			}
-			i.testimonials {
+			i.travel-reviews {
 				background-position: -47px $subpage-bg-y;
 			}
 			i.tickets-fares {
@@ -129,6 +131,7 @@ $rimheight: 48px;
 			i.home{
 				background-position: -251px $subpage-bg-y;
 				margin-right: 5px;
+				
 			}
 		 }
 		 a:hover {
@@ -136,7 +139,7 @@ $rimheight: 48px;
 			 i.routes-schedules {
 				background-position: -13px $subpage-bg-y-hover;
 			 }
-			 i.testimonials {
+			 i.travel-reviews {
 				background-position: -47px $subpage-bg-y-hover;
 			}
 			i.tickets-fares {

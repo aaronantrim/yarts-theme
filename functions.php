@@ -468,8 +468,15 @@ class My_Walker extends Walker_Nav_Menu
 
 class My_SubPage_Walker extends Walker_Nav_Menu
 {
+	static $menu_count = 0;
 	function start_el(&$output, $item, $depth, $args) {
 		global $wp_query;
+		
+		$output .= "<!-- x:".self::$menu_count."-->";
+		
+       
+        
+		
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
 		$class_names = $value = '';
@@ -478,7 +485,12 @@ class My_SubPage_Walker extends Walker_Nav_Menu
 
 		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
 		$class_names = ' class=" linked-div ' . esc_attr( $class_names ) . '"';
-
+		
+		
+		if(self::$menu_count == 5) {
+			$output .= '<span id="more-info"><span id="more-info-text">&#x25BC; More Info</span><span id="more-info-links">';
+		}
+		
 		$output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
 
 		$attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
@@ -487,13 +499,23 @@ class My_SubPage_Walker extends Walker_Nav_Menu
 		$attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
 
 		$item_output = $args->before;
+		
 		$item_output .= '<a'. $attributes .'><i class="'.slugify($item->title).'"></i>';
 		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
 		$item_output .= '</a>';
 		$item_output .= '';
 		$item_output .= $args->after;
-
+		
+		
+		
+		if ( 0 == $depth ) self::$menu_count++;
 		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+		
+		
+	}
+	
+	function end_lvl( &$output, $item, $depth ) {
+		$output .= '<br style="clear: both;" /></span></span></ul></div>';
 	}
 }
 

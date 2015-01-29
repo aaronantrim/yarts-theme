@@ -46,3 +46,68 @@ on larger screens.
 		
 		margin-left: 20px;
 	}
+	
+#home-middle-col-3 {
+#home-featured-image {
+		margin-top: 50px;
+	}
+	#promo-box {
+		display: none;
+	}
+	
+	#promo-box-quote-narrow {
+		display: none;
+	}
+}
+
+
+.main-subpage-top-menu { 
+	.nav {
+	
+		li {
+		font-size: 16px;
+			padding-left: 8px;	
+			padding-right: 8px;		
+		}
+		
+	}
+}
+
+#page-title-text {
+	font-size: 35px;
+	text-transform: uppercase;
+	color: white;
+	font-weight: 600;
+	letter-spacing: 5px;
+	text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.28);
+}
+#more-info {
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: white;
+	cursor: pointer;
+	#more-info-links {
+	position: absolute;
+		top: -99999px;
+	li {
+		
+		clear: left;
+	}
+	}
+	
+	
+	
+}
+
+#more-info:hover { 
+	color: lighten(#b5d18a,10);
+	position: relative; 
+	#more-info-links {
+		top: 0px;
+		li {
+		
+
+		}
+	}
+}

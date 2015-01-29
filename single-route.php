@@ -18,7 +18,9 @@
     					'after' => '',                                  // after the menu
     					'link_before' => '',                            // before each link
     					'link_after' => '',                             // after each link
-    					'depth' => 0,                                   // limit the depth of the nav
+    					'depth' => 0,   
+    					'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s<br style="clear:both;" />	</span></span></ul>',
+    					                                // limit the depth of the nav
     					'fallback_cb' => 'bones_footer_links_fallback',  // fallback function
     					'walker' => $subpage_walker
 						)); ?>
@@ -121,10 +123,28 @@ $bytesize = number_format($bytesize/1000000,1).' MB';
 							</div><!-- #route-alert-expander -->
 						</div>
 						<div id="schedule-box" class="route-box route-box-shadow">
-						<h2>Schedule <span class="click-message">(Click to pop-up a schedule for each route)</span></h2>
+					
+								<h2>Schedule <span class="click-message">(Click to pop-up a schedule for each route)</span></h2>
+								<div class="interior">
+								<div id="route-schedule-info">
+								</div><!-- end #route-schedule-info -->
+								<div id="route-timetable-links-holder">
+									<ul>
+										<li>
+											<div class="route-timetable-title"></div>
+											<div class="route-timetable-trips"></div>
+										</li>
+										<li>
+											<div class="route-timetable-title"></div>
+											<div class="route-timetable-trips"></div>
+										</li>
+									</ul>
+									<br style="clear: both;" />
+								</div> <!-- end #route-timetable-links-holder -->
+						</div><!-- end .interior -->
 						</div><!-- end schedule box"-->
 						<div id="fares-box" class="route-box route-box-shadow">
-						<h2>fares</h2>
+						<h2>Fares</h2>
 						</div><!-- end fares box" -->
 					</div>
 					

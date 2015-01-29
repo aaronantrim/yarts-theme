@@ -174,11 +174,18 @@ float: left;
 .route-box {
 	background: #e7d6c5;
 	min-height: 100px;
+	margin-bottom: 20px;
 	h2 {
 		background-color: #cac0a5;
 		border-bottom: 1px solid #33302c;
 		margin-top: 0;
 		margin-bottom: 0;
+		padding: 6px;
+		font-size: 17px;
+		color: black;
+		span {
+			font-size: .7em;
+		}
 	}
 }
 
@@ -261,4 +268,34 @@ float: left;
 		position: relative;
 		top: -1px;
 	}
+}
+
+#schedule-box  {
+	.interior {
+		padding: 6px;
+	}
+}
+
+#route-timetable-links-holder {
+	ul {
+		li {
+			border-top: 6px solid #f5eacc;
+			border-right: 6px solid #d4c2a4;
+			border-left: 6px solid #d4c2a4;
+			border-bottom: 6px solid #ccba9c;
+			background-color:#ecdbbd;
+			height: 104px;
+			width: 47%;
+			float: left;
+			margin: 6px;
+			cursor: pointer;
+			
+		}
+		li:hover {
+			background: lighten(#ecdbbd, 5);
+			
+		}
+	
+	}
+
 }

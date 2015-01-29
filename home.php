@@ -160,6 +160,54 @@
 											">
 											<?php if(current_user_can( 'manage_options' )) { edit_post_link('Edit this image','','',29);} ?>
 
+					<?php
+							
+								
+							$query = new WP_Query(array(
+							'posts_per_page' => 1,
+							"post_type"=>"home_slide",  
+								
+
+							));			
+								if ( $query->have_posts() ) {
+									?>
+									
+									<?php
+									
+										while ( $query->have_posts() ) {
+											$query->the_post();
+											
+											?>
+											<div id="promo-box" style="background-position: center center; background-image:  url(<?php
+										
+												$thumb_id = get_post_thumbnail_id();
+												$thumb_url = wp_get_attachment_image_src($thumb_id,'full', true);
+												echo $thumb_url[0];
+											?>);">
+									
+										
+											</div><!-- end #promo-box --> 
+											<div id="promo-box-quote-narrow">
+												<div id="home-quote"><?php echo get_field('promotional_quote'); ?></div>
+												<div id="home-quote-author">- <?php echo get_field('quote_author'); ?></div>
+												<?php if(current_user_can( 'manage_options' )) {
+												?>
+													<div id="home-slide-edit-link"> <?php
+													edit_post_link('Edit slide');
+													?>
+													</div><!--end home-slide-edit-link -->
+													<?php
+												} ?>
+												</div><!-- end #promo-box-quote-narrow -->
+										<?php
+										}
+										?>
+									
+										
+										<?php
+									}  
+							wp_reset_postdata();
+							?>
 					</div> <!-- end #home-middle-col-1 -->
 					<br style="clear: both;" />
 				</div><!-- end #middle-home -->

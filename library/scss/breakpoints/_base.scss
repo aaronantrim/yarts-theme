@@ -948,3 +948,99 @@ FOOTER STYLES
 	
 		margin-left: 5px;
 	}
+	
+	
+#home-middle-col-3 {
+	#home-featured-image {
+		margin-top: 10px;
+	}
+	#promo-box {
+		display: inherit;
+		//width: 34%; //504/1533
+		width: 100%;
+		height: 230px;
+		margin: 0px 18px 5px 0;
+		float: left;
+		color: white;
+		border-top: 4px solid #493f2c;
+		text-transform: uppercase; 
+		font-weight: 400;
+		text-align: center;
+		padding-top: 30px;
+		padding-left: 20px;
+		padding-right: 20px;
+		font-size: 1.25em;
+		text-shadow: 1px 1px 3px rgba(0,0,0,1);
+		font-family: 'Oswald', sans-serif;
+			
+	}
+	#promo-box-quote-narrow {
+		background: none;
+		color: white;
+		text-transform: uppercase; 
+		padding: 5px;
+		padding-top: 0;
+		font-size: 14px;
+		font-weight: 600;
+		text-align: center;
+		#home-quote-author {
+				font-size: .8em;
+			}
+	}	
+	
+}
+
+.main-subpage-top-menu { 
+	.nav {
+	
+		li {
+			font-size: 15px;
+			padding-left: 0px;	
+			padding-right: 0px;		
+		}
+		
+	}
+}
+
+
+#page-title-text {
+	font-size: 28px;
+	text-transform: uppercase;
+	color: white;
+	font-weight: 600;
+	letter-spacing: 5px;
+	text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.28);
+}
+
+#more-info {
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: white;
+	cursor: pointer;
+	#more-info-links {
+		position: absolute;
+		top: -99999px;
+		background-image: url(../images/wood1.jpg);
+	li {
+		
+	
+	}
+	}
+	
+	
+	
+}
+
+#more-info:hover { 
+	color: lighten(#b5d18a,10);
+	position: relative; 
+	#more-info-links {
+		position: relative;
+		top: 0;
+		li {
+		
+
+		}
+	}
+}

@@ -34,3 +34,27 @@ on larger screens.
 	
 	}
 }
+
+.main-subpage-top-menu { 
+	.nav {
+	
+		li {
+			padding-left: 5px;	
+			padding-right: 5px;		
+		}
+		
+	}
+}
+
+#more-info-text {
+display: none;
+}
+
+#more-info {
+#more-info-links {
+		position: inherit;
+		li {
+			clear: none;
+		}
+}
+}
