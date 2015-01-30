@@ -59,13 +59,16 @@
 											">
 										</div><!-- end featured image -->
 										<div id="page-anchor-links"><ul></ul></div>
-										<div class="interior">
+										
 										<?php
 										};
-										
+										?>
+										<div class="interior">
+										<?php
 									 the_content(); ?>
 									 </div>
 						</div><!-- end #subpage-main-content-panel -->
+						<br style="clear: both;" />
 					</div><!-- #subpage-left-col -->
 					<div id="subpage-right-col" class="subpage-col">
 					<?php if(get_alertCount() != 0) { ?>
@@ -144,8 +147,10 @@
 							wp_reset_postdata();
 							?>
 							<a href="<?php echo get_site_url(); ?>/news">See all >></a>
+
 						</div><!-- end #subpage-news-holder -->
 						<a id="home-contact-us" href="<?php echo get_site_url(); ?>/contact-us">Contact Us</a>
+
 					</div><!-- edn #subpage-right-col --> 
 					<br style="clear: both;" />
 				</div><!-- end #route-main -->
