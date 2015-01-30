@@ -59,7 +59,7 @@
 								if ( $query->have_posts() ) {
 									?>
 									<select id="routes-dropdown" onchange="location = this.options[this.selectedIndex].value;">
-									<option value="#">View a different route</option>
+									<option value="#">Change Route</option>
 									<?php
 										while ( $query->have_posts() ) {
 											$query->the_post();
@@ -105,6 +105,39 @@ $bytesize = number_format($bytesize/1000000,1).' MB';
 							<h2><?php echo get_field('route_short_name'); ?> Detail Map <span class="click-message">(Click to enlarge)</span></h2>
 							<?php echo get_the_post_thumbnail( $post->ID, 'full' );  ?>
 						</div><!-- end #route-main-col-left -->
+						<div id="route-connections" class="route-box route-box-shadow">
+							<h2>Connections</h2>
+							<div id="route-connections-interior">
+								<?php $connections_raw = get_field('route_connections'); 
+								$connections_lines = explode(';', $connections_raw); 
+								foreach($connections_lines as &$line) {
+									
+									$starter = '';
+									$ender = '';
+									if (strpos($line, '*') !== FALSE) {
+										$starter = '<h3>';
+										$ender = '</h3>';
+									} else {
+										if (strpos($line, '@') !== FALSE) { 
+											$connection_and_link = explode('@',	$line);
+											$line = '&#9632; <a href="'.$connection_and_link[1].'">'.ltrim($connection_and_link[0]).'</a>';
+										
+										}
+										$starter = '<div class="connection-line">';
+										$ender = '</div><!-- end class="connection-line" -->';
+									}
+									$line = str_replace('*','',$line);
+									
+									echo $starter;
+									echo $line;
+									echo $ender;
+								}
+								
+								
+								
+								?>
+							</div><!-- #route-connections-interior -->
+						</div><!-- #route-connections -->
 					</div>
 					<div id="route-main-col-right">
 						<div id="route-alert-holder" class="route-box-shadow">
@@ -131,24 +164,53 @@ $bytesize = number_format($bytesize/1000000,1).' MB';
 										<li>&#9632; <?php the_field('route_service_days'); ?></li>
 										<li>&#9632; <?php the_field('route_effective_dates'); ?></li>
 									</ul>
+									<div id="holiday-link"><a href="<?php echo get_permalink(14); ?>">(Check Holidays)</a></div>
 								</div><!-- end #route-schedule-info -->
 								<div id="route-timetable-links-holder">
 									<ul>
-										<li>
-											<div class="route-timetable-title"></div>
-											<div class="route-timetable-trips"></div>
+										<?php if(get_field('route_timetable1')) { 
+											$timetable1 = get_field('route_timetable1');	
+											?>
+										<li class="linked-div" rel="<?php echo get_permalink($timetable1->ID); ?>">
+											<a href="<?php echo get_permalink($timetable1->ID); ?>"></a>
+											
+											<div class="route-timetable-title"><?php the_field('timetable_name', $timetable1->ID);?></div>
+											<div class="route-timetable-trips"><?php echo str_replace(',','<br />',get_field('timetable_trips', $timetable1->ID));?></div>
 										</li>
-										<li>
-											<div class="route-timetable-title"></div>
-											<div class="route-timetable-trips"></div>
+										<?php } ?>
+										<?php if(get_field('route_timetable2')) { 
+											$timetable2 = get_field('route_timetable2');	
+											?>
+										<li class="linked-div" rel="<?php echo get_permalink($timetable2->ID); ?>">
+											<a href="<?php echo get_permalink($timetable2->ID); ?>"></a>
+											
+											<div class="route-timetable-title"><?php the_field('timetable_name', $timetable2->ID);?></div>
+											<div class="route-timetable-trips"><?php echo str_replace(',','<br />',get_field('timetable_trips', $timetable2->ID));?></div>
 										</li>
+										<?php } ?>
+										<?php if(get_field('route_timetable3')) { 
+											$timetable3 = get_field('route_timetable3');	
+											?>
+										<li class="linked-div" rel="<?php echo get_permalink($timetable3->ID); ?>">
+											<a href="<?php echo get_permalink($timetable3->ID); ?>"></a>
+											
+											<div class="route-timetable-title"><?php the_field('timetable_name', $timetable3->ID);?></div>
+											<div class="route-timetable-trips"><?php echo str_replace(',','<br />',get_field('timetable_trips', $timetable3->ID));?></div>
+										</li>
+										<?php } ?>
+										<br style="clear: both;" />
 									</ul>
-									<br style="clear: both;" />
+									
 								</div> <!-- end #route-timetable-links-holder -->
 						</div><!-- end .interior -->
 						</div><!-- end schedule box"-->
 						<div id="fares-box" class="route-box route-box-shadow">
 						<h2>Fares</h2>
+							<div class="interior">
+								All YARTS tickets include the entree fee to Yosemite
+								<hr />
+								<strong>For Complete fare information, see <a href="<?php echo get_permalink(8); ?>#<?php echo slugify(get_field('route_short_name'));?>"><?php echo get_the_title(8); ?></a></strong>
+							</div>
 						</div><!-- end fares box" -->
 					</div>
 					

@@ -1017,7 +1017,16 @@ FOOTER STYLES
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	color: white;
+	height: 51px; 
+	font-size: 12px;
 	cursor: pointer;
+	margin-top: 7px;
+	padding: 10px;
+	float: left;
+	border-right: 1px solid rgba(0,0,0,.4);
+	#info-text {
+		display: none;
+	}
 	#more-info-links {
 		position: absolute;
 		top: -99999px;
@@ -1035,12 +1044,40 @@ FOOTER STYLES
 #more-info:hover { 
 	color: lighten(#b5d18a,10);
 	position: relative; 
+	background: rgba(0,0,0,.1);
 	#more-info-links {
-		position: relative;
-		top: 0;
+		position: absolute;
+		top: 51px; 
+		right: 0;
+		width: 280px;
 		li {
-		
+		margin-top: 0;
+		text-align: center;
+		width: 100%;
+		border-right: 0;
+		border-bottom: 1px solid rgba(255,255,255,.3);
 
 		}
 	}
 }
+
+
+
+#route-timetable-links-holder {
+	ul {
+		li {
+			width: 97%;
+			float: left;
+			clear: left;
+			
+		}
+		li:hover {
+			
+			
+		}
+		
+	
+	}
+
+}
+	

@@ -147,8 +147,9 @@ function the_breadcrumb() {
         
         }
     
-    
+    echo '<br style="clear: both;" />';
     echo '</ul>';
+    
     
     }
     
@@ -488,7 +489,7 @@ class My_SubPage_Walker extends Walker_Nav_Menu
 		
 		
 		if(self::$menu_count == 5) {
-			$output .= '<span id="more-info"><span id="more-info-text">&#x25BC; More Info</span><span id="more-info-links">';
+			$output .= '<span id="more-info"><span id="more-info-text">&#x25BC; More <span id="info-text">Info</span></span><span id="more-info-links">';
 		}
 		
 		$output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
@@ -624,7 +625,7 @@ $labels = array(
 		'has_archive'        => false,
 		'hierarchical'       => false,
 		'menu_position'      => null,
-		'supports'           => array( 'title', 'editor', 'revisions','page-attributes' )
+		'supports'           => array( 'title', 'revisions','page-attributes' )
 		
 	);
 

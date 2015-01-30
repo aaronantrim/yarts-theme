@@ -1,60 +1,155 @@
 <?php get_header(); ?>
 
-			<div id="content">
+			<div id="home-wood-top" class="wrap cf">
+					<div id="center-wood-base"></div>
+					<div id="left-wood-base">  </div>
+					<div id="right-wood-base"> </div>
+					
+					<?php 
+					
+					$subpage_walker = new My_Subpage_Walker;
+					wp_nav_menu(array(
+    					'container' => 'div',                           // enter '' to remove nav container (just make sure .footer-links in _base.scss isn't wrapping)
+    					'container_class' => 'main-subpage-top-menu cf',         // class of container (should you choose to use it)
+    					'menu' => __( 'Main subpage top menu', 'bonestheme' ),   // nav name
+    					'menu_class' => 'nav footer-nav cf',            // adding custom nav class
+    					'theme_location' => 'main-subpage-top-menu',    // where it's located in the theme
+    					'before' => '',                                 // before the menu
+    					'after' => '',                                  // after the menu
+    					'link_before' => '',                            // before each link
+    					'link_after' => '',                             // after each link
+    					'depth' => 0,   
+    					'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s<br style="clear:both;" />	</span></span></ul>',
+    					                                // limit the depth of the nav
+    					'fallback_cb' => 'bones_footer_links_fallback',  // fallback function
+    					'walker' => $subpage_walker
+						)); ?>
+				</div><!-- end #home-wood-top -->
+			<div id="subpage-holder" class="wrap cf subpage" >
+			
+			<div id="main-subpage-top-menu" >
+				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+				</div><!-- end #main-subpage-top-menu -->
+				<div id="top-title-area">
+					<?php the_breadcrumb(); ?>
 
-				<div id="inner-content" class="wrap cf">
+					<div id="route-title-holder">
+						<div id="page-title-text"><?php echo str_replace('>','<span class="route-triangle">&#9654;</span>',get_the_title()); ?></div>
+						
+					</div><!-- end #route-title-holder -->
+						<br style="clear:both;" />
+				</div> <!-- end #top-title-area -->
+				
 
-						<main id="main" class="m-all t-2of3 d-5of7 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+				<div id="route-main">
+					<div id="subpage-left-col" class="subpage-col">
+						<div id="subpage-main-content-panel" class="route-box route-box-shadow">
+							<div id="subpage-top-links">
+							</div><!-- end #subpage-top-links -->
+							<?php if( has_post_thumbnail()) { ?>
+										<div id="featured-image-container">
+											<img class="featured-image" src="
+											<?php
+										
+												$thumb_id = get_post_thumbnail_id();
+												$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'large', true);
+												echo $thumb_url_array[0];
+										
+											?>
+											">
+										</div><!-- end featured image -->
+										<div id="page-anchor-links"><ul></ul></div>
+										<div class="interior">
+										<?php
+										};
+										
+									 the_content(); ?>
+									 </div>
+						</div><!-- end #subpage-main-content-panel -->
+					</div><!-- #subpage-left-col -->
+					<div id="subpage-right-col" class="subpage-col">
+					<?php if(get_alertCount() != 0) { ?>
+					<div id="subpage-alerts-holder" class="route-box route-box-shadow">
+							<h2>Alerts</h2>
+							<?php
+							
+								
+							$query = new WP_Query(array(
+							'posts_per_page' => 3,
+							"post_type"=>"alert", 
+								
 
-							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
-
-								<header class="article-header">
-
-									<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
-
-									<p class="byline vcard">
-										<?php printf( __( 'Posted <time class="updated" datetime="%1$s" itemprop="datePublished">%2$s</time> by <span class="author">%3$s</span>', 'bonestheme' ), get_the_time('Y-m-j'), get_the_time(get_option('date_format')), get_the_author_link( get_the_author_meta( 'ID' ) )); ?>
-									</p>
-
-								</header> <?php // end article header ?>
-
-								<section class="entry-content cf" itemprop="articleBody">
-									<?php
-										// the content (pretty self explanatory huh)
-										the_content();
-
-										/*
-										 * Link Pages is used in case you have posts that are set to break into
-										 * multiple pages. You can remove this if you don't plan on doing that.
-										 *
-										 * Also, breaking content up into multiple pages is a horrible experience,
-										 * so don't do it. While there are SOME edge cases where this is useful, it's
-										 * mostly used for people to get more ad views. It's up to you but if you want
-										 * to do it, you're wrong and I hate you. (Ok, I still love you but just not as much)
-										 *
-										 * http://gizmodo.com/5841121/google-wants-to-help-you-avoid-stupid-annoying-multiple-page-articles
-										 *
-										*/
-										wp_link_pages( array(
-											'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'bonestheme' ) . '</span>',
-											'after'       => '</div>',
-											'link_before' => '<span>',
-											'link_after'  => '</span>',
-										) );
+							));			
+								if ( $query->have_posts() ) {
 									?>
-								</section> <?php // end article section ?>
+									<ul>
+									<?php
+									
+										while ( $query->have_posts() ) {
+											$query->the_post();
+											
+											?>
+												<li class="home-alerts-outer" >
+													 <a href="<?php the_permalink(); ?>" class="home-news-inner">
+									   
+														 <i></i> <?php the_title(); ?>
+										 
+													 </a>
+												</li>	
+											
+										<?php
+										}
+										?>
+										</ul>
+										<?php
+									}  
+							wp_reset_postdata();
+							?>
+					</div><!-- #subpage-alerts-holder --> <?php } ?>
+					
+						<div id="subpage-news-holder" class="route-box route-box-shadow">
+							<h2>News</h2>
+							<?php
+							
+								
+							$query = new WP_Query(array(
+							'posts_per_page' => 3,
+							"post_type"=>"news", 
+								
 
-								<footer class="article-footer cf">
-
-								</footer>
-
-								<?php comments_template(); ?>
-
-							</article>
-
-							<?php endwhile; else : ?>
+							));			
+								if ( $query->have_posts() ) {
+									?>
+									<ul>
+									<?php
+									
+										while ( $query->have_posts() ) {
+											$query->the_post();
+											
+											?>
+												<li class="home-news-outer linked-div"  >
+													 <a href="<?php the_permalink(); ?>" class="home-news-inner">
+									   
+														 <i></i> <?php the_title(); ?>
+										 
+													 </a>
+												</li>	
+											
+										<?php
+										}
+										?>
+										</ul>
+										<?php
+									}  
+							wp_reset_postdata();
+							?>
+							<a href="<?php echo get_site_url(); ?>/news">See all >></a>
+						</div><!-- end #subpage-news-holder -->
+						<a id="home-contact-us" href="<?php echo get_site_url(); ?>/contact-us">Contact Us</a>
+					</div><!-- edn #subpage-right-col --> 
+					<br style="clear: both;" />
+				</div><!-- end #route-main -->
+				<?php endwhile; else : ?>
 
 									<article id="post-not-found" class="hentry cf">
 										<header class="article-header">
@@ -68,14 +163,7 @@
 										</footer>
 									</article>
 
-							<?php endif; ?>
-
-						</main>
-
-						<?php get_sidebar(); ?>
-
-				</div>
-
+				<?php endif; ?>
 			</div>
 
 <?php get_footer(); ?>

@@ -4,11 +4,17 @@
 	color: white;
 	padding: 10px 24px;
 	border-top: 5px solid black;
+	position: relative;
 }  
 
 #breadcrumbs {
+	
+	float: left;
+	border-radius: 4px;
+	
 	margin:0;
 	padding: 0;
+	padding: 3px;
 	li {
 		float: left;
 		color: #8eb18c;
@@ -33,6 +39,86 @@
 	font-weight: 600;
 	letter-spacing: 5px;
 	text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.28);
+}
+
+.subpage {
+
+#top-title-area {
+	border-bottom: 4px solid black;
+}
+
+#featured-image-container {
+	img {
+		width: 100%;
+	}
+}
+
+	#route-title-holder {
+		clear: left;
+		margin-left: 0;
+		height: 48px;
+	}
+	
+	#subpage-left-col {
+		width: 70%;
+		float: left;
+		margin-right: 20px; 
+	}
+	#subpage-right-col {
+		width: 28%;
+		float: left;
+	}
+	
+	#subpage-news-holder {
+		ul {
+			margin-top: 5px;
+		}
+		a:link {
+			text-decoration: none;
+		}
+	}
+	
+	a:link#home-contact-us,a:active#home-contact-us,a:visited#home-contact-us {
+		background: #acd373;
+		border: 3px solid #e0eeca;
+		color:#426747;
+		padding: 8px;
+		text-decoration: none;
+		border-radius: 4px;
+		float: left;
+		font-weight: 600;
+	}
+	
+	.interior {
+		padding: 20px;
+		padding-top: 10px;
+		
+		h3:first-of-type {
+			margin-top: 0;
+		}	
+	}
+	
+	
+	
+	
+	a:hover#home-contact-us {
+		background: lighten(#acd373,10);
+	}
+	
+	.home-news-outer {
+		padding: 5px;
+		font-size: .9em;
+		border-bottom: 1px solid darken(#e7d6c5, 10);
+		a:link {
+			text-decoration: none;
+		}
+	}
+	
+	.home-news-outer:hover { 
+		background:  lighten(#e7d6c5, 10); 
+		cursor: pointer;
+	}
+
 }
 
 
@@ -101,7 +187,8 @@ $rimheight: 53px;
 			position: relative;
 			top: -2px;
 		 }
-	 
+		 
+		
 	 
 	 	$subpage-bg-y: -320px;
 	 	$subpage-bg-y-hover: -369px;
@@ -123,7 +210,10 @@ $rimheight: 53px;
 				background-position: -154px $subpage-bg-y;
 			}
 			i.travel-connections {
-				background-position: -126px $subpage-bg-y;
+				
+				background-position: -126px -316px;
+				top:-5px;
+				height: 34px;
 			}
 			i.holidays-calendar {
 				background-position: -190px $subpage-bg-y;
@@ -149,7 +239,9 @@ $rimheight: 53px;
 				background-position: -154px $subpage-bg-y-hover;
 			}
 			i.travel-connections {
-				background-position: -126px $subpage-bg-y-hover;
+				background-position: -126px -365px;
+				top:-5px;
+				height: 34px;
 			}
 			i.holidays-calendar {
 				background-position: -190px $subpage-bg-y-hover;

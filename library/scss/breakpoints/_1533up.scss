@@ -8,7 +8,7 @@ You can add some advanced styles here if you like. This kicks in
 on larger screens.
 
 ******************************************************************/
-
+/*
 .wrap {
   width: 1533px;
 }
@@ -41,7 +41,7 @@ on larger screens.
 		li {
 			padding-left: 5px;	
 			padding-right: 5px;		
-		}
+		} 
 		
 	}
 }
@@ -51,6 +51,7 @@ display: none;
 }
 
 #more-info {
+float: none; 
 #more-info-links {
 		position: inherit;
 		li {
@@ -74,4 +75,4 @@ display: none;
 	
 	}
 
-}
+}*/

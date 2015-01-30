@@ -48,7 +48,9 @@ top: -2px;
 	}
 }
 #route-selector {
-	float: right;
+	position: absolute;
+	right: 20px;
+	top: 20px;
 }
 
 #route-pdf-link {
@@ -279,14 +281,31 @@ float: left;
 #route-schedule-info {
 color: #403a35;
 margin-left: 10px;
-li {
-	margin-bottom: 5px;
-}
+position: relative;
+width: 100%;
+
+	#holiday-link {
+		position: absolute;
+		right: 10%;
+		top: 10px;
+		
+		a:link, a:active, a:visited {
+			color: #255b8d;
+		}
+	}
+
+	li {
+		margin-bottom: 5px;
+	}
 }
 
 #route-timetable-links-holder {
 	ul {
+		margin-bottom: 0;
 		li {
+			color: #413c32; 
+			text-align: center;
+			
 			border-top: 6px solid #f5eacc;
 			border-right: 6px solid #d4c2a4;
 			border-left: 6px solid #d4c2a4;
@@ -297,6 +316,16 @@ li {
 			margin: 6px;
 			cursor: pointer;
 			
+			.route-timetable-title {
+			 font-weight: bold;
+			 text-transform: uppercase;
+			 margin-top: 8px;
+			}
+			.route-timetable-trips {
+				margin-top: 4px;
+				font-size: .9em;
+			}
+			
 		}
 		li:hover {
 			background: lighten(#ecdbbd, 5);
@@ -306,3 +335,16 @@ li {
 	}
 
 }
+
+#fares-box {
+	color: #413c32; 
+	.interior {
+		padding: 15px;
+	}
+}
+
+#route-connections-interior {
+padding: 20px;
+padding-top:0;
+color: #413c32; 
+} 

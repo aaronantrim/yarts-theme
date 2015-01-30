@@ -1172,11 +1172,15 @@ ul#menu-main-home-nav li.holidays-and-calendar:hover i {
   min-height: 100px;
   color: white;
   padding: 10px 24px;
-  border-top: 5px solid black; }
+  border-top: 5px solid black;
+  position: relative; }
 
 #breadcrumbs {
+  float: left;
+  border-radius: 4px;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  padding: 3px; }
   #breadcrumbs li {
     float: left;
     color: #8eb18c;
@@ -1196,6 +1200,51 @@ ul#menu-main-home-nav li.holidays-and-calendar:hover i {
   font-weight: 600;
   letter-spacing: 5px;
   text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.28); }
+
+.subpage #top-title-area {
+  border-bottom: 4px solid black; }
+.subpage #featured-image-container img {
+  width: 100%; }
+.subpage #route-title-holder {
+  clear: left;
+  margin-left: 0;
+  height: 48px; }
+.subpage #subpage-left-col {
+  width: 70%;
+  float: left;
+  margin-right: 20px; }
+.subpage #subpage-right-col {
+  width: 28%;
+  float: left; }
+.subpage #subpage-news-holder ul {
+  margin-top: 5px; }
+.subpage #subpage-news-holder a:link {
+  text-decoration: none; }
+.subpage a:link#home-contact-us, .subpage a:active#home-contact-us, .subpage a:visited#home-contact-us {
+  background: #acd373;
+  border: 3px solid #e0eeca;
+  color: #426747;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  float: left;
+  font-weight: 600; }
+.subpage .interior {
+  padding: 20px;
+  padding-top: 10px; }
+  .subpage .interior h3:first-of-type {
+    margin-top: 0; }
+.subpage a:hover#home-contact-us {
+  background: #c3df9a; }
+.subpage .home-news-outer {
+  padding: 5px;
+  font-size: .9em;
+  border-bottom: 1px solid #d8bda1; }
+  .subpage .home-news-outer a:link {
+    text-decoration: none; }
+.subpage .home-news-outer:hover {
+  background: #f6f0e9;
+  cursor: pointer; }
 
 .main-subpage-top-menu {
   position: absolute;
@@ -1257,7 +1306,9 @@ ul#menu-main-home-nav li.holidays-and-calendar:hover i {
   .main-subpage-top-menu .nav a:link i.how-to-ride, .main-subpage-top-menu .nav a:visited i.how-to-ride, .main-subpage-top-menu .nav a:active i.how-to-ride {
     background-position: -154px -320px; }
   .main-subpage-top-menu .nav a:link i.travel-connections, .main-subpage-top-menu .nav a:visited i.travel-connections, .main-subpage-top-menu .nav a:active i.travel-connections {
-    background-position: -126px -320px; }
+    background-position: -126px -316px;
+    top: -5px;
+    height: 34px; }
   .main-subpage-top-menu .nav a:link i.holidays-calendar, .main-subpage-top-menu .nav a:visited i.holidays-calendar, .main-subpage-top-menu .nav a:active i.holidays-calendar {
     background-position: -190px -320px; }
   .main-subpage-top-menu .nav a:link i.home, .main-subpage-top-menu .nav a:visited i.home, .main-subpage-top-menu .nav a:active i.home {
@@ -1274,7 +1325,9 @@ ul#menu-main-home-nav li.holidays-and-calendar:hover i {
   .main-subpage-top-menu .nav a:hover i.how-to-ride {
     background-position: -154px -369px; }
   .main-subpage-top-menu .nav a:hover i.travel-connections {
-    background-position: -126px -369px; }
+    background-position: -126px -365px;
+    top: -5px;
+    height: 34px; }
   .main-subpage-top-menu .nav a:hover i.holidays-calendar {
     background-position: -190px -369px; }
   .main-subpage-top-menu .nav a:hover i.home {
@@ -1320,7 +1373,9 @@ ul#menu-main-home-nav li.holidays-and-calendar:hover i {
   top: 0px; }
 
 #route-selector {
-  float: right; }
+  position: absolute;
+  right: 20px;
+  top: 20px; }
 
 #route-pdf-link {
   float: right;
@@ -1476,21 +1531,50 @@ ul#menu-main-home-nav li.holidays-and-calendar:hover i {
 
 #route-schedule-info {
   color: #403a35;
-  margin-left: 10px; }
+  margin-left: 10px;
+  position: relative;
+  width: 100%; }
+  #route-schedule-info #holiday-link {
+    position: absolute;
+    right: 10%;
+    top: 10px; }
+    #route-schedule-info #holiday-link a:link, #route-schedule-info #holiday-link a:active, #route-schedule-info #holiday-link a:visited {
+      color: #255b8d; }
   #route-schedule-info li {
     margin-bottom: 5px; }
 
-#route-timetable-links-holder ul li {
-  border-top: 6px solid #f5eacc;
-  border-right: 6px solid #d4c2a4;
-  border-left: 6px solid #d4c2a4;
-  border-bottom: 6px solid #ccba9c;
-  background-color: #ecdbbd;
-  height: 104px;
-  margin: 6px;
-  cursor: pointer; }
-#route-timetable-links-holder ul li:hover {
-  background: #f2e6d1; }
+#route-timetable-links-holder ul {
+  margin-bottom: 0; }
+  #route-timetable-links-holder ul li {
+    color: #413c32;
+    text-align: center;
+    border-top: 6px solid #f5eacc;
+    border-right: 6px solid #d4c2a4;
+    border-left: 6px solid #d4c2a4;
+    border-bottom: 6px solid #ccba9c;
+    background-color: #ecdbbd;
+    height: 104px;
+    margin: 6px;
+    cursor: pointer; }
+    #route-timetable-links-holder ul li .route-timetable-title {
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-top: 8px; }
+    #route-timetable-links-holder ul li .route-timetable-trips {
+      margin-top: 4px;
+      font-size: .9em; }
+  #route-timetable-links-holder ul li:hover {
+    background: #f2e6d1; }
+
+#fares-box {
+  color: #413c32; }
+  #fares-box .interior {
+    padding: 15px; }
+
+#route-connections-interior {
+  padding: 20px;
+  padding-top: 0;
+  color: #413c32; }
 
 /*********************
 IMPORTING MODULES
@@ -1961,12 +2045,12 @@ LAYOUT & GRID STYLES
 LINK STYLES
 *********************/
 a, a:visited {
-  color: #f01d4f;
+  color: #255b8d;
   /* on hover */
   /* on click */
   /* mobile tap color */ }
   a:hover, a:focus, a:visited:hover, a:visited:focus {
-    color: #d10e3c; }
+    color: #1b4469; }
   a:link, a:visited:link {
     /*
     this highlights links on iPhones/iPads.
@@ -2489,7 +2573,15 @@ view.
   text-transform: uppercase;
   letter-spacing: 1px;
   color: white;
-  cursor: pointer; }
+  height: 51px;
+  font-size: 12px;
+  cursor: pointer;
+  margin-top: 7px;
+  padding: 10px;
+  float: left;
+  border-right: 1px solid rgba(0, 0, 0, 0.4); }
+  #more-info #info-text {
+    display: none; }
   #more-info #more-info-links {
     position: absolute;
     top: -99999px;
@@ -2497,10 +2589,24 @@ view.
 
 #more-info:hover {
   color: #ccdfaf;
-  position: relative; }
+  position: relative;
+  background: rgba(0, 0, 0, 0.1); }
   #more-info:hover #more-info-links {
-    position: relative;
-    top: 0; }
+    position: absolute;
+    top: 51px;
+    right: 0;
+    width: 280px; }
+    #more-info:hover #more-info-links li {
+      margin-top: 0;
+      text-align: center;
+      width: 100%;
+      border-right: 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+
+#route-timetable-links-holder ul li {
+  width: 97%;
+  float: left;
+  clear: left; }
 
 /*********************
 LARGER MOBILE DEVICES
@@ -2610,7 +2716,10 @@ This is for the larger monitors and possibly full screen viewers.
     text-transform: uppercase;
     letter-spacing: 1px;
     color: white;
-    cursor: pointer; }
+    cursor: pointer;
+    font-size: 15px; }
+    #more-info #info-text {
+      display: inherit; }
     #more-info #more-info-links {
       position: absolute;
       top: -99999px; }
@@ -2621,7 +2730,9 @@ This is for the larger monitors and possibly full screen viewers.
     color: #ccdfaf;
     position: relative; }
     #more-info:hover #more-info-links {
-      top: 0px; }
+      position: absolute;
+      top: 51px;
+      right: 0; }
 
   #route-timetable-links-holder ul li {
     width: 46.6%;
@@ -2638,33 +2749,74 @@ This is for the larger monitors and possibly full screen viewers.
   on larger screens.
   
   ******************************************************************/
+  /*
   .wrap {
-    width: 1533px; }
-
-  #top-home #map-box {
-    width: 64.7%; }
-
-  #middle-home #home-middle-col-2 {
-    width: 31.1%; }
-  #middle-home #home-middle-col-3 {
-    width: 31.1%; }
-
-  .main-subpage-top-menu .nav li {
-    padding-left: 5px;
-    padding-right: 5px; }
-
+    width: 1533px;
+  }
+  
+  #top-home {
+  	#map-box {
+  			width: 64.7%; //504/1533
+  		}
+  }
+  
+  #middle-home {
+  	
+  	
+  	#home-middle-col-1 {
+  	
+  	}
+  	#home-middle-col-2 {
+  	width: 31.1%;
+  	
+  	}
+  	#home-middle-col-3 {
+  		width: 31.1%;
+  	
+  	}
+  }
+  
+  .main-subpage-top-menu { 
+  	.nav {
+  	
+  		li {
+  			padding-left: 5px;	
+  			padding-right: 5px;		
+  		} 
+  		
+  	}
+  }
+  
   #more-info-text {
-    display: none; }
-
-  #more-info #more-info-links {
-    position: inherit; }
-    #more-info #more-info-links li {
-      clear: none; }
-
-  #route-timetable-links-holder ul li {
-    width: 47.4%;
-    float: left;
-    clear: none; } }
+  display: none;
+  }
+  
+  #more-info {
+  float: none; 
+  #more-info-links {
+  		position: inherit;
+  		li {
+  			clear: none;
+  		}
+  }
+  }
+  
+  #route-timetable-links-holder {
+  	ul {
+  		li {
+  			width: 47.4%;
+  			float: left;
+  			clear: none;
+  			
+  		}
+  		li:hover {
+  			
+  			
+  		}
+  	
+  	}
+  
+  }*/ }
 /*********************
 RETINA (2x RESOLUTION DEVICES)
 This applies to the retina iPhone (4s) and iPad (2,3) along with
