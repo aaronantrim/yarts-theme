@@ -156,13 +156,15 @@ float: left;
 }
 
 #route-detail-map {
-
+	text-align: center;
 	
 	img {
+		//width: auto;
+		max-width: 100%;
 		
-		width: 100%;
-		height: auto; 
+		 height: auto;
 		cursor: pointer;
+		max-height: 700px;
 	}
 }
 

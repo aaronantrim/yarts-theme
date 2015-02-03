@@ -103,7 +103,10 @@ $bytesize = number_format($bytesize/1000000,1).' MB';
 					
 						<div id="route-detail-map" class="route-box route-box-shadow">
 							<h2><?php echo get_field('route_short_name'); ?> Detail Map <span class="click-message">(Click to enlarge)</span></h2>
-							<?php echo get_the_post_thumbnail( $post->ID, 'full' );  ?>
+							<a href="<?php
+							$thumb_id = get_post_thumbnail_id();
+							$thumb_url = wp_get_attachment_image_src($thumb_id,'full', true);
+							echo $thumb_url[0]; ?>" data-lightbox="image-1" ><img src="<?php echo $thumb_url[0]; ?>" /></a>
 						</div><!-- end #route-detail-map-->
 						<div id="route-connections" class="route-box route-box-shadow">
 							<h2>Connections</h2>

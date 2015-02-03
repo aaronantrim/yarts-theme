@@ -10,8 +10,8 @@ $(document).ready(function(){
 	
 	$('#route-detail-map').click(function() {
 		
-		$(this).toggleClass('wide-view');
-		$(this).css('height',$(this).find('img').height());
+		//$(this).toggleClass('wide-view');
+		//$(this).css('height',$(this).find('img').height());
 		
 	});
 	

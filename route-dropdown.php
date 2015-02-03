@@ -1,6 +1,6 @@
 <?php ?>
 <ul id="route-dropdown">
-<li class="linked-div"><a href="<?php echo get_site_url(); ?>/routes-and-schedules">------- Overview -------</a></li>
+<li class="linked-div"><a href="<?php echo get_site_url(); ?>/routes-schedules">------- Overview -------</a></li>
 
 					<?php 
 								

@@ -1468,10 +1468,13 @@ ul#menu-main-home-nav li.holidays-and-calendar:hover i {
   width: 34%;
   float: left; }
 
-#route-detail-map img {
-  width: 100%;
-  height: auto;
-  cursor: pointer; }
+#route-detail-map {
+  text-align: center; }
+  #route-detail-map img {
+    max-width: 100%;
+    height: auto;
+    cursor: pointer;
+    max-height: 700px; }
 
 #route-detail-map.wide-view {
   clear: both; }
