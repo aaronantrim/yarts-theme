@@ -92,7 +92,7 @@ $file_url = get_attached_file( $file );
 $bytesize = number_format($bytesize/1000000,1).' MB';
 
 ?>
-
+ 
 <div id="route-pdf-link"><a href="<?php echo $file_url; ?>"><i></i>Download <?php the_field('route_short_name'); ?> Service Guide [PDF, <?php echo $bytesize; ?>]</a></div>	
 					<br style="clear:both;" />
 				</div> <!-- end #top-title-area -->

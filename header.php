@@ -16,7 +16,7 @@
 		<?php // mobile meta (hooray!) ?>
 		<meta name="HandheldFriendly" content="True">
 		<meta name="MobileOptimized" content="320">
-		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, width=1000"/>
 
 		<?php // icons & favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) ?>
 		<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/library/images/apple-touch-icon.png">
@@ -43,8 +43,7 @@
 
 		<?php // wordpress head functions ?>
 		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-		<script src="<?php echo get_template_directory_uri(); ?>/library/js/jquery-selectBox/jquery.selectBox.js" type="text/javascript"></script>
-		<link href='"<?php echo get_template_directory_uri(); ?>/library/js/jquery-selectBox/jquery.selectBox.css' rel='stylesheet' type='text/css'>
+		
 		<?php wp_head(); ?>
 		<script src="<?php echo get_template_directory_uri(); ?>/library/lightbox2/js/lightbox.min.js"></script>
 
