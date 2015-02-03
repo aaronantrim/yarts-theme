@@ -29,14 +29,25 @@
 										while ( $query->have_posts() ) {
 											$query->the_post();
 											
+											$link_class = '';
+											$link_content  = '';
+											if(get_field('slide_link_internal') != '' || get_field('slide_link_external') != '') {
+												$link_class = 'linked-div';
+												if(get_field('slide_link_internal') != '') {
+													$link_content  = '<a href="'.get_field('slide_link_internal').'"></a>';
+												} else if(get_field('slide_link_external') != '') {
+													$link_content  = '<a href="'.get_field('slide_link_external').'"></a>';
+												}
+											}
 											?>
-											<div id="promo-box" style="background-position: center center; background-image:  url(<?php
+											
+											<div id="promo-box" class="<?php echo $link_class; ?>" style="background-position: center center; background-image:  url(<?php
 										
 												$thumb_id = get_post_thumbnail_id();
 												$thumb_url = wp_get_attachment_image_src($thumb_id,'full', true);
 												echo $thumb_url[0];
 											?>);">
-									
+												<?php echo $link_content; ?>
 												<div id="home-quote"><?php echo get_field('promotional_quote'); ?></div>
 												<div id="home-quote-author">- <?php echo get_field('quote_author'); ?></div>
 												<?php if(current_user_can( 'manage_options' )) {

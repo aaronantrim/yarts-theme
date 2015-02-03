@@ -274,6 +274,40 @@ function bones_custom_image_sizes( $sizes ) {
     ) );
 }
 
+
+function create_area_tax() {
+	
+	register_taxonomy(
+			'alert-zone',
+			array( 'alert', 'news' ),
+			array(
+				'label' => __( 'Alert Zone' ),
+				'description' => 'Use this to properly associate the alert with the route.',
+				'rewrite' => array( 'slug' => 'alert-zone' ),
+				'hierarchical' => false,
+			)
+		);
+
+
+	$service_areas = array("Merced", "MamMoth Lake", "Sonora", "Fresno", "All Routes");
+	$service_areas_safe = array("Merced", "Mammoth_Lake", "Sonora", "Fresno", "all-routes");
+	$ind = 0;
+	foreach($service_areas as &$service_area) {
+		wp_insert_term(
+		 $service_area, // the term 
+		  'alert-zone', // the taxonomy
+		  array(
+			'description'=> '',
+			'slug' => $service_areas_safe[ind]
+		  )
+		);
+		$ind  += 1;
+	}
+}
+
+
+add_action( 'init', 'create_area_tax' );
+
 /*
 The function above adds the ability to use the dropdown menu to select
 the new images sizes you have just created from within the media manager
@@ -485,11 +519,19 @@ class My_SubPage_Walker extends Walker_Nav_Menu
 		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
 
 		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
-		$class_names = ' class=" linked-div ' . esc_attr( $class_names ) . '"';
+		if(slugify($item->title) == "routes-schedules") {
+			$class_names = ' class=" ' . esc_attr( $class_names ) .' '.slugify($item->title). '"';
+		}
+		else {
+			$class_names = ' class=" linked-div ' . esc_attr( $class_names ) .' '.slugify($item->title). '"';
+		}
 		
 		
 		if(self::$menu_count == 5) {
 			$output .= '<span id="more-info"><span id="more-info-text">&#x25BC; More <span id="info-text">Info</span></span><span id="more-info-links">';
+		}
+		if(slugify($item->title) == "routes-schedules") {
+			$output .= '<span id="routes-and-schedules-dropdown">';
 		}
 		
 		$output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
@@ -501,16 +543,41 @@ class My_SubPage_Walker extends Walker_Nav_Menu
 
 		$item_output = $args->before;
 		
-		$item_output .= '<a'. $attributes .'><i class="'.slugify($item->title).'"></i>';
-		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-		$item_output .= '</a>';
+		if(slugify($item->title) == "routes-schedules") {
+			$item_output .= '<a'. $attributes .'><i class="'.slugify($item->title).'"></i>';
+			$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+			$item_output .= '</a>';
+		} else {
+			$item_output .= '<a'. $attributes .'><i class="'.slugify($item->title).'"></i>';
+			$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+			$item_output .= '</a>';
+		}
 		$item_output .= '';
 		$item_output .= $args->after;
 		
 		
 		
 		if ( 0 == $depth ) self::$menu_count++;
+		
 		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+		if(slugify($item->title) == "routes-schedules") {
+			ob_start();  
+			get_template_part('route-dropdown'); 
+			$ret = ob_get_contents();  
+			ob_end_clean();
+			$output .= $ret;
+			$output .= '</span>';
+		}
+		
+		
+	}
+	
+	function end_el( &$output, $item, $depth = 0, $args = array() ) {
+		global $wp_query;
+		$output .= "</li>\n";
+		if(slugify($item->title) == "routes-schedules") {
+			$output .= '</span>';
+		}
 		
 		
 	}
@@ -578,6 +645,7 @@ $labels = array(
 	$args = array(
 		'menu_icon' => '',
 		'labels'             => $labels,
+
 		'public'             => true,
 		'publicly_queryable' => true,
 		'show_ui'            => true,
@@ -588,7 +656,7 @@ $labels = array(
 		'has_archive'        => true,
 		'hierarchical'       => false,
 		'menu_position'      => null,
-		'supports'           => array( 'title', 'revisions', 'thumbnail' )
+		'supports'           => array( 'title', 'revisions', 'thumbnail','page-attributes' )
 	);
 
 	register_post_type( 'route', $args );
@@ -653,6 +721,7 @@ $labels = array(
 		'menu_icon' => '',
 		'labels'             => $labels,
 		'public'             => true,
+		'taxonomies' => array('alert-zone'),
 		'publicly_queryable' => true,
 		'show_ui'            => true,
 		'show_in_menu'       => true,

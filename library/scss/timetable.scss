@@ -1,0 +1,144 @@
+#home-wood-top.subpage {
+	height: 13px;
+}
+
+
+
+#page-title-text.timetable {
+	font-size: .9em;
+}
+
+#page-subtitle-text.timetable {
+	font-size: 1.6em;
+	margin-top: 0;
+	letter-spacing: 2px;
+}
+
+#route-title-holder.timetable {
+	margin-bottom: 15px;
+}
+
+#timetable-main {
+	padding: 20px;
+	min-height: 200px;
+	background: #e7d6c5;
+	#route-alerts {
+	
+
+	}
+	
+	.timetable-main-width {
+		width: 60%;
+		min-width: 700px;
+	}
+	
+	.timetable-info-box {
+		border-color: #cac0a5;
+		border-left-width: 2px;
+		border-right-width: 2px;
+		border-top-width: 9px;
+		border-bottom-width: 9px;
+		border-style: solid;
+		background: white;
+		padding: 0 15px 0 15px;
+		color: black;
+		
+		
+		p {
+			margin:0;
+			padding:0; 
+		}
+		
+	}
+	
+	
+	
+	table {
+		margin-top: 20px;
+		margin-bottom: 20px; 
+		caption {
+			font-size: 1.2em;
+			font-weight: bold;
+			background: white;
+		}
+		tr {
+			th.run_header,.table_key {
+				background-color: #c6e4a9;
+			}
+			
+		}
+		 th {
+		 	background-color: #eee;
+		 }	
+		caption,td, th {
+			
+			border: 1px solid grey;
+			color: black;
+			padding: 6px;
+			font-size: .9em;
+		}
+		 th {
+		 	background-color: #eee;
+		 }	
+		 
+		 tr:hover {
+		 	background: #d9edd8;
+		 	th {
+		 		background: #d9edd8;	
+		 	}
+		 	.run_header,.table_key {
+				background-color: #c6e4a9;
+			}
+			
+		 }
+		background: white;
+		color: black;
+		box-shadow: 0px 2px 5px rgba(0,0,0,.5);
+		
+		
+	}
+}
+
+.single-timetable {
+	
+	#top-title-area {
+		border-bottom: 5px solid #000;
+	}
+
+}
+
+#timetable-close-back-link-holder {
+	width: 100%;
+	background: #e7d6c5;
+	padding: 7px 20px 7px 20px;
+	border-bottom: 1px solid #433e39;
+	a:link {
+		text-decoration: none;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+	i {
+		background-image: url(../images/yarts-sprites.png);
+		background-position: -476px -88px;
+		width: 27px;
+		height: 28px;
+		float: left;
+		position: relative; 
+		top: 2px;
+		margin-right: 7px;
+		margin-left: 2px;
+	}
+}
+
+.table_key {text-align:left;}
+.stop_name {text-align:left;}
+.stop_number {font-size:11px;}
+td {text-align:center;}
+.area_name {text-transform: uppercase;text-align:left;}
+.run_header {text-align:center;}
+.column_note_1 {background-color:LightBlue;}
+.stop_time{} 
+.am{}
+.not_scheduled{}
+.req{color:#006;}

@@ -25,16 +25,17 @@
     					'walker' => $subpage_walker
 						)); ?>
 				</div><!-- end #home-wood-top -->
-			<div id="subpage-holder" class="wrap cf" >
+			<div id="subpage-holder" class="wrap cf subpage" >
 			
-			<div id="main-subpage-top-menu">
+			<div id="main-subpage-top-menu" >
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 				</div><!-- end #main-subpage-top-menu -->
 				<div id="top-title-area">
 					<?php the_breadcrumb(); ?>
-					<i id="route-icon" style="background-color: #<?php the_field('route_color'); ?>;"></i>
+
 					<div id="route-title-holder">
-						<div id="page-title-text"><?php echo str_replace('>','<span class="route-triangle">&#9654;</span>',get_the_title()); ?></div>
+						
+						<div id="page-title-text"><i></i><?php echo str_replace('>','<span class="route-triangle">&#9654;</span>',get_the_title()); ?></div>
 						
 					</div><!-- end #route-title-holder -->
 						<br style="clear:both;" />
@@ -42,7 +43,120 @@
 				
 
 				<div id="route-main">
-					<?php the_content() ; ?>
+					<div id="subpage-left-col" class="subpage-col">
+						<div id="subpage-main-content-panel" class="route-box route-box-shadow">
+							<div id="subpage-top-links">
+							</div><!-- end #subpage-top-links -->
+							<?php if( has_post_thumbnail()) { ?>
+										<div id="featured-image-container">
+											<img class="featured-image" src="
+											<?php
+										
+												$thumb_id = get_post_thumbnail_id();
+												$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'large', true);
+												echo $thumb_url_array[0];
+										
+											?>
+											">
+										</div><!-- end featured image -->
+										<div id="page-anchor-links"><ul></ul></div>
+										
+										<?php
+										};
+										?>
+										<div class="interior">
+										<?php
+									 the_content(); ?>
+									 </div>
+						</div><!-- end #subpage-main-content-panel -->
+						<br style="clear: both;" />
+					</div><!-- #subpage-left-col -->
+					<div id="subpage-right-col" class="subpage-col">
+					<?php if(get_alertCount() != 0) { ?>
+					<div id="subpage-alerts-holder" class="route-box route-box-shadow">
+							<h2><i></i>Alerts</h2>
+							<?php
+							
+								
+							$query = new WP_Query(array(
+							'posts_per_page' => 3,
+							"post_type"=>"alert", 
+								
+
+							));			
+								if ( $query->have_posts() ) {
+									?>
+									<ul>
+									<?php
+									
+										while ( $query->have_posts() ) {
+											$query->the_post();
+											
+											?>
+												<li class="home-alerts-outer" >
+													 <a href="<?php the_permalink(); ?>" class="home-news-inner">
+									   
+														 <i></i> <?php the_title(); ?>
+										 
+													 </a>
+												</li>	
+											
+										<?php
+										}
+										?>
+										</ul>
+										<?php
+									}  
+							wp_reset_postdata();
+							?>
+							<a id="subpage-alerts-see-all" class="subpage-see-all" href="<?php echo get_site_url(); ?>/alerts">See all >></a>
+							<br style="clear: both" />
+					</div><!-- #subpage-alerts-holder --> <?php } ?>
+					
+						<div id="subpage-news-holder" class="route-box route-box-shadow">
+							<h2>News</h2>
+							<?php
+							
+								
+							$query = new WP_Query(array(
+							'posts_per_page' => 3,
+							"post_type"=>"news", 
+								
+
+							));			
+								if ( $query->have_posts() ) {
+									?>
+									<ul>
+									<?php
+									
+										while ( $query->have_posts() ) {
+											$query->the_post();
+											
+											?>
+												<li class="home-news-outer linked-div"  >
+													 <a href="<?php the_permalink(); ?>" class="home-news-inner">
+									   
+														 <i></i> <?php the_title(); ?>
+										 
+													 </a>
+												</li>	
+											
+										<?php
+										}
+										?>
+										</ul>
+										<?php
+									}  
+							wp_reset_postdata();
+							?>
+							<a id="subpage-news-see-all" class="subpage-see-all" href="<?php echo get_site_url(); ?>/news">See all >></a>
+							<br style="clear: both" />
+
+						</div><!-- end #subpage-news-holder -->
+						<a id="home-contact-us" class="route-box-shadow" href="<?php echo get_site_url(); ?>/contact-us">Contact Us</a>
+
+					</div><!-- edn #subpage-right-col --> 
+					<br style="clear: both;" />
 				</div><!-- end #route-main -->
 				<?php endwhile; else : ?>
 

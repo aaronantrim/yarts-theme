@@ -34,7 +34,7 @@
 					<?php the_breadcrumb(); ?>
 
 					<div id="route-title-holder">
-						<div id="page-title-text"><?php echo str_replace('>','<span class="route-triangle">&#9654;</span>',get_the_title()); ?></div>
+						<div id="page-title-text"><i></i><?php echo str_replace('>','<span class="route-triangle">&#9654;</span>',get_the_title()); ?></div>
 						
 					</div><!-- end #route-title-holder -->
 						<br style="clear:both;" />
@@ -73,7 +73,7 @@
 					<div id="subpage-right-col" class="subpage-col">
 					<?php if(get_alertCount() != 0) { ?>
 					<div id="subpage-alerts-holder" class="route-box route-box-shadow">
-							<h2>Alerts</h2>
+							<h2><i></i>Alerts</h2>
 							<?php
 							
 								
@@ -108,6 +108,8 @@
 									}  
 							wp_reset_postdata();
 							?>
+							<a id="subpage-alerts-see-all" class="subpage-see-all" href="<?php echo get_site_url(); ?>/alerts">See all >></a>
+							<br style="clear: both" />
 					</div><!-- #subpage-alerts-holder --> <?php } ?>
 					
 						<div id="subpage-news-holder" class="route-box route-box-shadow">
@@ -146,10 +148,11 @@
 									}  
 							wp_reset_postdata();
 							?>
-							<a href="<?php echo get_site_url(); ?>/news">See all >></a>
+							<a id="subpage-news-see-all" class="subpage-see-all" href="<?php echo get_site_url(); ?>/news">See all >></a>
+							<br style="clear: both" />
 
 						</div><!-- end #subpage-news-holder -->
-						<a id="home-contact-us" href="<?php echo get_site_url(); ?>/contact-us">Contact Us</a>
+						<a id="home-contact-us" class="route-box-shadow" href="<?php echo get_site_url(); ?>/contact-us">Contact Us</a>
 
 					</div><!-- edn #subpage-right-col --> 
 					<br style="clear: both;" />

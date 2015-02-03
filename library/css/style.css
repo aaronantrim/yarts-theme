@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! Made with Bones: http://themble.com/bones :) */
 /******************************************************************
 Site Name:
@@ -873,7 +874,7 @@ them however you see fit.
     margin-left: 0;
     float: left;
     position: relative;
-    background-image: url(../images/map-temp.png);
+    background-image: url(../images/map_bg.jpg);
     background-position: center center;
     color: #665b51; }
     #top-home #map-box #map-instructions {
@@ -1216,9 +1217,20 @@ ul#menu-main-home-nav li.holidays-and-calendar:hover i {
 .subpage #subpage-right-col {
   width: 28%;
   float: left; }
-.subpage #subpage-news-holder ul {
-  margin-top: 5px; }
-.subpage #subpage-news-holder a:link {
+.subpage #subpage-alerts-holder h2 i {
+  background-image: url(../images/yarts-sprites.png);
+  background-position: -476px -55px;
+  width: 27px;
+  height: 24px;
+  float: left;
+  position: relative;
+  top: 5px;
+  margin-right: 2px;
+  margin-left: 2px; }
+.subpage #subpage-news-holder ul, .subpage #subpage-alerts-holder ul {
+  margin-top: 5px;
+  margin-bottom: 0; }
+.subpage #subpage-news-holder a:link, .subpage #subpage-alerts-holder a:link {
   text-decoration: none; }
 .subpage a:link#home-contact-us, .subpage a:active#home-contact-us, .subpage a:visited#home-contact-us {
   background: #acd373;
@@ -1234,15 +1246,20 @@ ul#menu-main-home-nav li.holidays-and-calendar:hover i {
   padding-top: 10px; }
   .subpage .interior h3:first-of-type {
     margin-top: 0; }
+.subpage a.subpage-see-all {
+  float: left;
+  margin: 5px; }
+.subpage #subpage-news-holder a.subpage-see-all:hover, .subpage #subpage-alerts-holder a.subpage-see-all:hover {
+  text-decoration: underline; }
 .subpage a:hover#home-contact-us {
   background: #c3df9a; }
-.subpage .home-news-outer {
+.subpage .home-news-outer, .subpage .home-alerts-outer {
   padding: 5px;
   font-size: .9em;
   border-bottom: 1px solid #d8bda1; }
-  .subpage .home-news-outer a:link {
+  .subpage .home-news-outer a:link, .subpage .home-alerts-outer a:link {
     text-decoration: none; }
-.subpage .home-news-outer:hover {
+.subpage .home-news-outer:hover, .subpage .home-alerts-outer:hover {
   background: #f6f0e9;
   cursor: pointer; }
 
@@ -1333,6 +1350,17 @@ ul#menu-main-home-nav li.holidays-and-calendar:hover i {
   .main-subpage-top-menu .nav a:hover i.home {
     background-position: -251px -369px; }
 
+.single-alert #page-title-text i {
+  background-image: url(../images/yarts-sprites.png);
+  background-position: -476px -13px;
+  width: 27px;
+  height: 24px;
+  float: left;
+  position: relative;
+  top: 4px;
+  margin-right: 7px;
+  margin-left: 2px; }
+
 #route-main {
   background-color: #3b3830;
   min-height: 200px; }
@@ -1375,16 +1403,17 @@ ul#menu-main-home-nav li.holidays-and-calendar:hover i {
 #route-selector {
   position: absolute;
   right: 20px;
-  top: 20px; }
+  top: 20px;
+  display: none; }
 
 #route-pdf-link {
-  float: right;
-  clear: right;
-  width: 300px;
-  text-align: right; }
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+  text-align: right;
+  line-height: 45px; }
   #route-pdf-link a:link, #route-pdf-link a:visited, #route-pdf-link a:active, #route-pdf-link a:hover {
-    color: white;
-    text-decoration: none; }
+    color: #7eb4e7; }
     #route-pdf-link a:link i, #route-pdf-link a:visited i, #route-pdf-link a:active i, #route-pdf-link a:hover i {
       background-image: url(../images/yarts-sprites.png);
       background-position: -511px -11px;
@@ -1393,7 +1422,7 @@ ul#menu-main-home-nav li.holidays-and-calendar:hover i {
       height: 40px;
       margin-left: 8px;
       position: relative;
-      top: 5px; }
+      top: -1px; }
   #route-pdf-link a:hover {
     text-decoration: underline; }
     #route-pdf-link a:hover i {
@@ -1420,7 +1449,8 @@ ul#menu-main-home-nav li.holidays-and-calendar:hover i {
 #service-days {
   border-right: 1px solid rgba(255, 255, 255, 0.5);
   padding-right: 10px;
-  margin-right: 10px; }
+  margin-right: 10px;
+  margin-bottom: 10px; }
 
 #effective_dates {
   float: left; }
@@ -1575,6 +1605,124 @@ ul#menu-main-home-nav li.holidays-and-calendar:hover i {
   padding: 20px;
   padding-top: 0;
   color: #413c32; }
+  #route-connections-interior .connection-description {
+    padding-left: 15px;
+    padding-bottom: 5px; }
+
+#route-connections-blurb {
+  margin-top: 10px;
+  border-bottom: 1px solid grey;
+  padding-bottom: 10px; }
+
+#home-wood-top.subpage {
+  height: 13px; }
+
+#page-title-text.timetable {
+  font-size: .9em; }
+
+#page-subtitle-text.timetable {
+  font-size: 1.6em;
+  margin-top: 0;
+  letter-spacing: 2px; }
+
+#route-title-holder.timetable {
+  margin-bottom: 15px; }
+
+#timetable-main {
+  padding: 20px;
+  min-height: 200px;
+  background: #e7d6c5; }
+  #timetable-main .timetable-main-width {
+    width: 60%;
+    min-width: 700px; }
+  #timetable-main .timetable-info-box {
+    border-color: #cac0a5;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 9px;
+    border-bottom-width: 9px;
+    border-style: solid;
+    background: white;
+    padding: 0 15px 0 15px;
+    color: black; }
+    #timetable-main .timetable-info-box p  {
+      margin: 0;
+      padding: 0; }
+  #timetable-main table {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: white;
+    color: black;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5); }
+    #timetable-main table caption {
+      font-size: 1.2em;
+      font-weight: bold;
+      background: white; }
+    #timetable-main table tr th.run_header, #timetable-main table tr .table_key {
+      background-color: #c6e4a9; }
+    #timetable-main table th {
+      background-color: #eee; }
+    #timetable-main table caption, #timetable-main table td, #timetable-main table th {
+      border: 1px solid grey;
+      color: black;
+      padding: 6px;
+      font-size: .9em; }
+    #timetable-main table th {
+      background-color: #eee; }
+    #timetable-main table tr:hover {
+      background: #d9edd8; }
+      #timetable-main table tr:hover th {
+        background: #d9edd8; }
+      #timetable-main table tr:hover .run_header, #timetable-main table tr:hover .table_key {
+        background-color: #c6e4a9; }
+
+.single-timetable #top-title-area {
+  border-bottom: 5px solid #000; }
+
+#timetable-close-back-link-holder {
+  width: 100%;
+  background: #e7d6c5;
+  padding: 7px 20px 7px 20px;
+  border-bottom: 1px solid #433e39; }
+  #timetable-close-back-link-holder a:link {
+    text-decoration: none; }
+  #timetable-close-back-link-holder a:hover {
+    text-decoration: underline; }
+  #timetable-close-back-link-holder i {
+    background-image: url(../images/yarts-sprites.png);
+    background-position: -476px -88px;
+    width: 27px;
+    height: 28px;
+    float: left;
+    position: relative;
+    top: 2px;
+    margin-right: 7px;
+    margin-left: 2px; }
+
+.table_key {
+  text-align: left; }
+
+.stop_name {
+  text-align: left; }
+
+.stop_number {
+  font-size: 11px; }
+
+td {
+  text-align: center; }
+
+.area_name {
+  text-transform: uppercase;
+  text-align: left; }
+
+.run_header {
+  text-align: center; }
+
+.column_note_1 {
+  background-color: LightBlue; }
+
+.req {
+  color: #006; }
 
 /*********************
 IMPORTING MODULES
@@ -2608,6 +2756,87 @@ view.
   float: left;
   clear: left; }
 
+.wood-back {
+  background: url(../images/wood1.jpg); }
+
+span#routes-and-schedules-dropdown {
+  position: relative; }
+  span#routes-and-schedules-dropdown #route-dropdown {
+    position: absolute;
+    top: -9999px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px; }
+    span#routes-and-schedules-dropdown #route-dropdown li {
+      position: relative;
+      left: -25px;
+      background: url(../images/wood1.jpg);
+      height: 45px;
+      width: 300px;
+      float: left;
+      clear: left;
+      cursor: pointer;
+      text-align: center;
+      color: white;
+      padding: 10px;
+      margin: 0;
+      border-right: 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      border-right: 2px solid black;
+      border-left: 2px solid black; }
+      span#routes-and-schedules-dropdown #route-dropdown li .route-dropdown-icon {
+        height: 24px;
+        width: 24px;
+        float: left;
+        border-radius: 12px;
+        border: 2px solid white; }
+      span#routes-and-schedules-dropdown #route-dropdown li a:link {
+        padding-left: 0px;
+        padding-right: 0px;
+        margin: 0;
+        float: none;
+        padding: 0; }
+    span#routes-and-schedules-dropdown #route-dropdown li:first-of-type {
+      border-top: 2px solid #352015; }
+    span#routes-and-schedules-dropdown #route-dropdown li:last-of-type {
+      border-bottom: 2px solid black;
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 10px; }
+
+span#routes-and-schedules-dropdown:hover {
+  position: relative; }
+  span#routes-and-schedules-dropdown:hover #route-dropdown {
+    position: absolute;
+    top: 50px; }
+    span#routes-and-schedules-dropdown:hover #route-dropdown li:hover {
+      background: #523220;
+      color: #8eb18c; }
+      span#routes-and-schedules-dropdown:hover #route-dropdown li:hover .route-dropdown-icon   {
+        position: relative;
+        left: 10px; }
+
+#bg_clear {
+  margin-left: 114px;
+  background-repeat: no-repeat; }
+
+#bg_clear.fresno {
+  background-image: url(../images/map/fresno.jpg);
+  background-position: 256px 166px; }
+
+#bg_clear.merced {
+  background-image: url(../images/map/merced.jpg);
+  background-position: 33px 150px; }
+
+#bg_clear.sonora {
+  background-image: url(../images/map/sonora.jpg);
+  background-position: 2px 28px; }
+
+#bg_clear.mammoth {
+  background-image: url(../images/map/mammoth.jpg);
+  background-position: 328px 28px; }
+
+.linked-div {
+  cursor: pointer; }
+
 /*********************
 LARGER MOBILE DEVICES
 This is for devices like the Galaxy Note or something that's
@@ -2737,7 +2966,10 @@ This is for the larger monitors and possibly full screen viewers.
   #route-timetable-links-holder ul li {
     width: 46.6%;
     float: left;
-    clear: none; } }
+    clear: none; }
+
+  #bg_clear {
+    margin-left: 0px; } }
 @media only screen and (min-width: 1532px) {
   /******************************************************************
   Site Name: 

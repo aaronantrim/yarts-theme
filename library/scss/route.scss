@@ -51,18 +51,21 @@ top: -2px;
 	position: absolute;
 	right: 20px;
 	top: 20px;
+	display: none;
 }
 
 #route-pdf-link {
-	float: right;
-	clear: right;
-	width: 300px;
+	position:absolute;
+	right: 20px;
+	bottom: 10px;
+	
 	text-align: right;
+	line-height: 45px;
 
 	
 	a:link, a:visited, a:active, a:hover {
-		color: white;
-		text-decoration: none;
+		color: saturate(lighten($link-color,35),10);
+
 		
 		i {
 		background-image: url(../images/yarts-sprites.png);
@@ -72,7 +75,8 @@ top: -2px;
 		height: 40px;
 		margin-left: 8px;
 		position: relative;
-		top: 5px;
+		top: -1px;
+	
 		}
 	}
 	
@@ -117,6 +121,7 @@ top: -2px;
 	border-right: 1px solid rgba(255,255,255,.5);
 	padding-right: 10px;
 	margin-right: 10px;
+	margin-bottom: 10px;
 }
 
 
@@ -347,4 +352,15 @@ width: 100%;
 padding: 20px;
 padding-top:0;
 color: #413c32; 
+
+	.connection-description {
+		padding-left: 15px;
+		padding-bottom: 5px;
+	}
 } 
+
+#route-connections-blurb {
+margin-top: 10px;
+border-bottom: 1px solid grey;
+padding-bottom: 10px;
+}

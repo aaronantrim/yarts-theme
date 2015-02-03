@@ -69,9 +69,26 @@
 		float: left;
 	}
 	
-	#subpage-news-holder {
+	 #subpage-alerts-holder {
+		h2 { 
+				i {
+			background-image: url(../images/yarts-sprites.png);
+			background-position: -476px -55px;
+			width: 27px;
+			height: 24px;
+			float: left;
+			position: relative; 
+			top: 5px;
+			margin-right: 2px;
+			margin-left: 2px;
+		}
+			}
+	}
+	
+	#subpage-news-holder, #subpage-alerts-holder {
 		ul {
 			margin-top: 5px;
+			margin-bottom: 0;
 		}
 		a:link {
 			text-decoration: none;
@@ -98,6 +115,16 @@
 		}	
 	}
 	
+	a.subpage-see-all {
+		float: left;
+		margin: 5px;
+	}
+	
+	#subpage-news-holder, #subpage-alerts-holder {
+		a.subpage-see-all:hover {
+			text-decoration: underline;
+		}
+	}
 	
 	
 	
@@ -105,7 +132,7 @@
 		background: lighten(#acd373,10);
 	}
 	
-	.home-news-outer {
+	.home-news-outer,.home-alerts-outer {
 		padding: 5px;
 		font-size: .9em;
 		border-bottom: 1px solid darken(#e7d6c5, 10);
@@ -114,7 +141,7 @@
 		}
 	}
 	
-	.home-news-outer:hover { 
+	.home-news-outer:hover,.home-alerts-outer:hover { 
 		background:  lighten(#e7d6c5, 10); 
 		cursor: pointer;
 	}
@@ -250,6 +277,22 @@ $rimheight: 53px;
 				background-position: -251px $subpage-bg-y-hover;
 			}
 		 }
+	}
+}
+
+.single-alert {
+	#page-title-text {
+		i {
+			background-image: url(../images/yarts-sprites.png);
+			background-position: -476px -13px;
+			width: 27px;
+			height: 24px;
+			float: left;
+			position: relative; 
+			top: 4px;
+			margin-right: 7px;
+			margin-left: 2px;
+		}
 	}
 }
 

@@ -93,7 +93,7 @@ $bytesize = number_format($bytesize/1000000,1).' MB';
 
 ?>
 
-<div id="route-pdf-link"><a href="<?php echo $file_url; ?>"><i></i>Download <?php the_field('route_short_name'); ?> <br />Service Guide [PDF, <?php echo $bytesize; ?>]</a></div>	
+<div id="route-pdf-link"><a href="<?php echo $file_url; ?>"><i></i>Download <?php the_field('route_short_name'); ?> Service Guide [PDF, <?php echo $bytesize; ?>]</a></div>	
 					<br style="clear:both;" />
 				</div> <!-- end #top-title-area -->
 				
@@ -104,12 +104,16 @@ $bytesize = number_format($bytesize/1000000,1).' MB';
 						<div id="route-detail-map" class="route-box route-box-shadow">
 							<h2><?php echo get_field('route_short_name'); ?> Detail Map <span class="click-message">(Click to enlarge)</span></h2>
 							<?php echo get_the_post_thumbnail( $post->ID, 'full' );  ?>
-						</div><!-- end #route-main-col-left -->
+						</div><!-- end #route-detail-map-->
 						<div id="route-connections" class="route-box route-box-shadow">
 							<h2>Connections</h2>
 							<div id="route-connections-interior">
+								<div id="route-connections-blurb">
+									YARTS connects with other local and intercity transit services to give you easy access to everything the Yosemite Region has to offer.
+								</div><!-- end #route-connections-blurb -->
 								<?php $connections_raw = get_field('route_connections'); 
 								$connections_lines = explode(';', $connections_raw); 
+								// splits apart the description field into good html.
 								foreach($connections_lines as &$line) {
 									
 									$starter = '';
@@ -120,9 +124,13 @@ $bytesize = number_format($bytesize/1000000,1).' MB';
 									} else {
 										if (strpos($line, '@') !== FALSE) { 
 											$connection_and_link = explode('@',	$line);
-											$line = '&#9632; <a href="'.$connection_and_link[1].'">'.ltrim($connection_and_link[0]).'</a>';
+											$line = '&#9632; <a id="connection-link" href="'.$connection_and_link[1].'">'.ltrim($connection_and_link[0]).'</a>';
+											
 										
 										}
+										if(sizeof($connection_and_link) >2) {
+											$line .= '<div class="connection-description">'.$connection_and_link[2].'</div><!-- end .connection-description -->';
+											}
 										$starter = '<div class="connection-line">';
 										$ender = '</div><!-- end class="connection-line" -->';
 									}
@@ -138,23 +146,62 @@ $bytesize = number_format($bytesize/1000000,1).' MB';
 								?>
 							</div><!-- #route-connections-interior -->
 						</div><!-- #route-connections -->
-					</div>
+
+					</div><!-- end #route-main-col-left -->
 					<div id="route-main-col-right">
-						<div id="route-alert-holder" class="route-box-shadow">
-							<div id="alert-title">
-								<i></i>
-								<strong>Service Alert:</strong> Many Bears Blocking Many Roads
-							</div><!-- alert-title -->
-							<div id="route-alert-content">
-								<p>slkfjalsd fa</p>
-							<p>	sdf asldkjfasdfa lsdkfjalsdkfjalsdkfjalsdkfjasldfkjasdfaslñjkfañlkds fa</p>
+						<?php
+								
+								$route_post_id = $post->ID;
+								wp_reset_query(); 
+								
+								$alertCount = 0;
+								$alert_query = new WP_Query(array(
+
+							"post_type"=>array("alert", 'news'), 
+							'tax_query' => 
+								array(
+									array(
+										'taxonomy' => 'alert-zone',
+										'field' => 'slug',
+										'terms' => array(get_field('route_internal_short_name', $route_post_id ), 'all', 'all-routes', 'all-dial')
+										
+									)
+								),
+								
+
+							));
+
+						
+								if ( $alert_query->have_posts() ) { ?>
+								<div id="route-alerts"> <?php
+										
+										while ( $alert_query->have_posts() ) {
+											$alert_query->the_post();
+											?>
+												<div id="route-alert-holder" class="route-box-shadow">
+													<div id="alert-title">
+														<i></i>
+														<strong>Service Alert:</strong> <?php the_title(); ?>
+													</div><!-- alert-title -->
+													<div id="route-alert-content">
+															
+															<?php the_excerpt() ; ?>
 								 
-								<div id="route-alert-read-more">Read More >></div>
-							</div><!-- #route-alert-content -->
-							<div id="route-alert-expander">
-								<span class="alert-expand-line left"></span> <span class="expand-triangle">&#9660;</span> <span id="alert-expand-text">Click to Expand</span> <span class="expand-triangle">&#9660;</span> <span class="alert-expand-line right"></span>
-							</div><!-- #route-alert-expander -->
-						</div>
+													<?php if(0){ ?>	 <div id="route-alert-read-more"><a href="<?php the_permalink(); ?>">Read More >></a></div>  <?php } ?>
+													</div><!-- #route-alert-content -->
+													<div id="route-alert-expander">
+														<span class="alert-expand-line left"></span> <span class="expand-triangle">&#9660;</span> <span id="alert-expand-text">Click to Expand</span> <span class="expand-triangle">&#9660;</span> <span class="alert-expand-line right"></span>
+													</div><!-- #route-alert-expander -->
+												</div>
+												<?php
+												$alertCount ++;
+										}
+?> </div><!-- end #route-alerts --> <?php
+									}  
+							wp_reset_postdata();
+							
+							?>
+						
 						<div id="schedule-box" class="route-box route-box-shadow">
 					
 								<h2>Schedules <span class="click-message">(Click to pop-up a schedule for each route)</span></h2>
