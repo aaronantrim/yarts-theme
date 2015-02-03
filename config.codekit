@@ -331,6 +331,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/library\/images\/map-buttom-edge-left.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1218,
+		"inputAbbreviatedPath": "\/library\/images\/map-buttom-edge-left.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/map-buttom-edge-left.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/library\/images\/map-edge-horizontal.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -437,6 +448,17 @@
 		"initialSize": 1099,
 		"inputAbbreviatedPath": "\/library\/images\/news-bullet.png",
 		"outputAbbreviatedPath": "\/library\/images\/news-bullet.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/library\/images\/Untitled-2.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1218,
+		"inputAbbreviatedPath": "\/library\/images\/Untitled-2.jpg",
+		"outputAbbreviatedPath": "\/library\/images\/Untitled-2.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

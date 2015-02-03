@@ -86,7 +86,7 @@
 		 	th {
 		 		background: #d9edd8;	
 		 	}
-		 	.run_header,.table_key {
+		 	.table_key {
 				background-color: #c6e4a9;
 			}
 			
@@ -135,10 +135,14 @@
 .stop_name {text-align:left;}
 .stop_number {font-size:11px;}
 td {text-align:center;}
-.area_name {text-transform: uppercase;text-align:left;}
+.area_name {text-transform: uppercase;text-align:left; }
 .run_header {text-align:center;}
 .column_note_1 {background-color:LightBlue;}
 .stop_time{} 
 .am{}
 .not_scheduled{}
 .req{color:#006;}
+
+#timetable-main table th.area_name {
+	 background-color: #dae4bb;
+}

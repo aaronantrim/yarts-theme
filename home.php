@@ -31,20 +31,24 @@
 											
 											$link_class = '';
 											$link_content  = '';
+											$promo_link = '';
+											
 											if(get_field('slide_link_internal') != '' || get_field('slide_link_external') != '') {
 												$link_class = 'linked-div';
 												if(get_field('slide_link_internal') != '') {
 													$link_content  = '<a href="'.get_field('slide_link_internal').'"></a>';
+													$promo_link = get_field('slide_link_internal');
 												} else if(get_field('slide_link_external') != '') {
 													$link_content  = '<a href="'.get_field('slide_link_external').'"></a>';
+													$promo_link = get_field('slide_link_external');
 												}
 											}
 											?>
 											
-											<div id="promo-box" class="<?php echo $link_class; ?>" style="background-position: center center; background-image:  url(<?php
+											<div id="promo-box" class="<?php echo $link_class; ?>" style="background-color: #<?php echo get_field('slide_background_color');?>; background-position: center center; background-image:  url(<?php
 										
 												$thumb_id = get_post_thumbnail_id();
-												$thumb_url = wp_get_attachment_image_src($thumb_id,'full', true);
+												$thumb_url = wp_get_attachment_image_src($thumb_id,'home-slide', true);
 												echo $thumb_url[0];
 											?>);">
 												<?php echo $link_content; ?>
@@ -188,16 +192,18 @@
 										while ( $query->have_posts() ) {
 											$query->the_post();
 											
-											?>
-											<div id="promo-box" style="background-position: center center; background-image:  url(<?php
+											?> 
+											<a href="<?php echo $promo_link; ?>">
+												<img id="promo-box" src="<?php
 										
 												$thumb_id = get_post_thumbnail_id();
-												$thumb_url = wp_get_attachment_image_src($thumb_id,'full', true);
+												$thumb_url = wp_get_attachment_image_src($thumb_id,'home-slide', true);
 												echo $thumb_url[0];
-											?>);">
+												?>" />
+											</a>
 									
 										
-											</div><!-- end #promo-box --> 
+											
 											<div id="promo-box-quote-narrow">
 												<div id="home-quote"><?php echo get_field('promotional_quote'); ?></div>
 												<div id="home-quote-author">- <?php echo get_field('quote_author'); ?></div>

@@ -1,4 +1,4 @@
-<img id="bg_clear" src="<?php echo get_template_directory_uri(); ?>/library/images/clear.png" usemap="#home-map-map" alt="" border="0" width="777" height="628">
+<img id="bg_clear" src="<?php echo get_template_directory_uri(); ?>/library/images/clear.png" usemap="#home-map-map" alt="" border="0" width="776" height="627">
 <map name="home-map" id="home-map-map">
 <area alt="sonora" title="" href="<?php echo get_permalink(63);?>" shape="poly" coords="20,176,98,215,169,211,231,200,289,201,370,202,415,199,434,191,448,183,467,181,468,175,452,177,441,181,425,191,418,191,407,187,366,163,327,146,273,113,183,107,157,103,161,69,155,20,77,11,18,38,7,76,5,135" style="outline:none;" >
 <area alt="merced" title="" href="<?php echo get_permalink(56);?>" shape="poly" coords="61,553,174,539,220,494,281,465,311,443,309,391,329,339,319,300,327,268,390,255,412,221,417,207,429,199,447,190,457,186,471,185,471,180,451,182,435,191,415,200,391,201,328,202,249,208,187,233,141,273,139,348,97,399,52,431,31,463,39,509" style="outline:none;" >

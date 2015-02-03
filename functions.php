@@ -245,6 +245,8 @@ if ( ! isset( $content_width ) ) {
 add_image_size( 'bones-thumb-600', 600, 150, true );
 add_image_size( 'bones-thumb-300', 300, 100, true );
 
+add_image_size( 'home-slide', 411 ); // 300 pixels wide (and unlimited height)
+
 /*
 to add more sizes, simply copy a line from above
 and change the dimensions & name. As long as you
@@ -731,7 +733,7 @@ $labels = array(
 		'has_archive'        => true,
 		'hierarchical'       => true,
 		'menu_position'      => null,
-		'supports'           => array( 'title', 'editor', 'revisions' )
+		'supports'           => array( 'title', 'editor', 'revisions', 'thumbnail' )
 	);
 
 	register_post_type( 'alert', $args );
@@ -766,7 +768,7 @@ $labels = array(
 		'has_archive'        => true,
 		'hierarchical'       => true,
 		'menu_position'      => null,
-		'supports'           => array( 'title', 'editor', 'revisions' )
+		'supports'           => array( 'title', 'editor', 'revisions','thumbnail' )
 	);
 
 	register_post_type( 'news', $args );

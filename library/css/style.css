@@ -852,6 +852,7 @@ them however you see fit.
     margin: 0px 18px 18px 0;
     float: left;
     color: white;
+    background-repeat: no-repeat;
     text-transform: uppercase;
     font-weight: 400;
     text-align: center;
@@ -867,7 +868,6 @@ them however you see fit.
   #top-home #promo-box:hover #home-slide-edit-link {
     display: inherit; }
   #top-home #map-box {
-    width: 64.5%;
     height: 627px;
     background: #f4eaca;
     margin: 0 0px 18px 18px;
@@ -875,7 +875,6 @@ them however you see fit.
     float: left;
     position: relative;
     background-image: url(../images/map_bg.jpg);
-    background-position: center center;
     color: #665b51; }
     #top-home #map-box #map-instructions {
       float: left;
@@ -895,6 +894,8 @@ them however you see fit.
       background-image: url(../images/map-edge-vertical.png);
       width: 15px;
       height: 100%;
+      left: 0;
+      position: absolute;
       background-repeat: repeat-y;
       background-position: 3px 0; }
     #top-home #map-box #map-decoration-lines-right {
@@ -1195,7 +1196,6 @@ ul#menu-main-home-nav li.holidays-and-calendar:hover i {
       text-decoration: underline; }
 
 #page-title-text {
-  font-size: 35px;
   text-transform: uppercase;
   color: white;
   font-weight: 600;
@@ -1673,7 +1673,7 @@ ul#menu-main-home-nav li.holidays-and-calendar:hover i {
       background: #d9edd8; }
       #timetable-main table tr:hover th {
         background: #d9edd8; }
-      #timetable-main table tr:hover .run_header, #timetable-main table tr:hover .table_key {
+      #timetable-main table tr:hover .table_key {
         background-color: #c6e4a9; }
 
 .single-timetable #top-title-area {
@@ -1723,6 +1723,9 @@ td {
 
 .req {
   color: #006; }
+
+#timetable-main table th.area_name {
+  background-color: #dae4bb; }
 
 /*********************
 IMPORTING MODULES
@@ -2677,7 +2680,6 @@ view.
 #home-middle-col-3 #promo-box {
   display: inherit;
   width: 100%;
-  height: 230px;
   margin: 0px 18px 5px 0;
   float: left;
   color: white;
@@ -2814,8 +2816,12 @@ span#routes-and-schedules-dropdown:hover {
         position: relative;
         left: 10px; }
 
+#page-title-text {
+  font-size: 20px; }
+
 #bg_clear {
-  margin-left: 114px;
+  position: absolute;
+  left: 114px;
   background-repeat: no-repeat; }
 
 #bg_clear.fresno {
@@ -2836,6 +2842,10 @@ span#routes-and-schedules-dropdown:hover {
 
 .linked-div {
   cursor: pointer; }
+
+#top-home #map-box {
+  width: 100%;
+  background-position: 11px -2px; }
 
 /*********************
 LARGER MOBILE DEVICES
@@ -2907,7 +2917,11 @@ This is for the larger monitors and possibly full screen viewers.
   #top-home #promo-box {
     display: inherit; }
   #top-home #map-box {
-    width: 64.5%; }
+    width: 64.5%;
+    background-position: -103px -2px; }
+
+  #page-title-text {
+    font-size: 25px; }
 
   #home-middle-col-1 {
     width: 32.8%; }
@@ -2933,7 +2947,6 @@ This is for the larger monitors and possibly full screen viewers.
     padding-right: 8px; }
 
   #page-title-text {
-    font-size: 35px;
     text-transform: uppercase;
     color: white;
     font-weight: 600;
@@ -2969,7 +2982,7 @@ This is for the larger monitors and possibly full screen viewers.
     clear: none; }
 
   #bg_clear {
-    margin-left: 0px; } }
+    left: 0px; } }
 @media only screen and (min-width: 1532px) {
   /******************************************************************
   Site Name: 

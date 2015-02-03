@@ -19,7 +19,12 @@ on larger screens.
 	}
 	#map-box {
 			width: 64.5%; //504/1533 
+			background-position: -103px -2px;
 		}
+}
+
+#page-title-text {
+	font-size: 25px;
 }
 
 #home-middle-col-1 {
@@ -74,7 +79,7 @@ on larger screens.
 }
 
 #page-title-text {
-	font-size: 35px;
+
 	text-transform: uppercase;
 	color: white;
 	font-weight: 600;
@@ -139,6 +144,7 @@ on larger screens.
 
 #bg_clear {
 
-margin-left:0px;
+left:0px;
+
 
 }

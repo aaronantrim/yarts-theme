@@ -11,6 +11,7 @@
 		margin: 0px 18px 18px 0;
 		float: left;
 		color: white;
+		background-repeat: no-repeat;
 		text-transform: uppercase; 
 		font-weight: 400;
 		text-align: center;
@@ -33,7 +34,7 @@
 	}
 	
 	#map-box {
-		width: 64.5%; //504/1533
+
 		height: 627px;
 		background: $map-tan;
 		margin: 0 0px 18px 18px;
@@ -41,7 +42,7 @@
 		float: left;
 		position: relative;
 		background-image: url(../images/map_bg.jpg);
-		background-position: center center;
+		
 		color: #665b51;
 		
 		#map-instructions {
@@ -67,6 +68,8 @@
 			background-image: url(../images/map-edge-vertical.png);
 			width: 15px;
 			height: 100%;
+			left: 0;
+			position: absolute;
 			background-repeat: repeat-y;
 			background-position: 3px 0;
 		}

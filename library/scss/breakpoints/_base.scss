@@ -958,7 +958,7 @@ FOOTER STYLES
 		display: inherit;
 		//width: 34%; //504/1533
 		width: 100%;
-		height: 230px;
+		//height: 230px;
 		margin: 0px 18px 5px 0;
 		float: left;
 		color: white;
@@ -1163,9 +1163,13 @@ span#routes-and-schedules-dropdown:hover {
 }
 
 
+#page-title-text {
+	font-size: 20px; 
+}
+
 #bg_clear {
- 
-margin-left:114px;
+position: absolute; 
+left:114px;
 background-repeat: no-repeat;
 
 }
@@ -1191,3 +1195,11 @@ background-position: 328px 28px;
 	cursor: pointer;
 }
 
+
+#top-home {
+	
+	#map-box {
+		width: 100%; //504/1533
+		background-position: 11px -2px;
+	}
+}
