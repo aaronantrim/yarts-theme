@@ -44,8 +44,34 @@
 				<div id="route-main">
 					<div id="subpage-left-col" class="subpage-col">
 						<div id="subpage-main-content-panel" class="route-box route-box-shadow">
-							<div id="subpage-top-links">
-							</div><!-- end #subpage-top-links -->
+							<?php
+															  if(!empty($post->post_parent )) {
+								 ?>
+								 	<div id="subpage-top-parent-link">
+								 		<a href="<?php echo get_the_permalink($post->post_parent);?>">Return to <?php echo get_the_title($post->post_parent); ?></a>
+								 	</div>
+								 <?php
+								  }
+								 $children = get_pages('child_of='.$post->ID.'&parent='.$post->ID);
+								 if(sizeof($children)> 0) {
+								 ?>
+								 	<div id="subpage-top-links">
+								 		<!--<div id="subpage-link-title">Subpages:</div>--!>
+										<ul>
+											 <?php
+								
+											 foreach($children as &$child) {
+												echo '<li><a href="'.get_the_permalink($child->ID).'">'.$child->post_title.'</a></li>';
+											 }
+											 ?>
+										 </ul>
+								 </div><!-- end #subpage-top-links -->
+								 <?php
+								  }
+
+								 ?>
+								 
+							
 							<?php if( has_post_thumbnail()) { ?>
 										<div id="featured-image-container">
 											<img class="featured-image" src="

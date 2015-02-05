@@ -879,11 +879,13 @@ them however you see fit.
     #top-home #map-box #map-instructions {
       float: left;
       margin-left: 29px;
-      margin-top: 20px; }
+      margin-top: 20px;
+      z-index: 99;
+      position: relative; }
     #top-home #map-box #desktop-map-alerts {
       position: absolute;
       right: 20px;
-      bottom: 100px; }
+      bottom: 125px; }
     #top-home #map-box #map-decoration-lines-top {
       background-image: url(../images/map-edge-horizontal.png);
       height: 15px;
@@ -1169,6 +1171,59 @@ ul#menu-main-home-nav li.holidays-and-calendar:hover i {
   background-image: url(../images/wood-wide-right-corner.png);
   background-position: right 0; }
 
+.home-map-button {
+  position: absolute;
+  padding: 8px 15px 7px;
+  background: #ecdcb8;
+  border: 1px solid #e3cdac;
+  border-right: 0;
+  border-left: 0; }
+  .home-map-button i {
+    float: left;
+    width: 24px;
+    height: 24px;
+    background-image: url(../images/yarts-sprites.png);
+    margin-right: 5px;
+    position: relative;
+    top: 3px; }
+  .home-map-button .home-map-button-decor-left, .home-map-button .home-map-button-decor-right {
+    background-image: url(../images/map-buttom-edge-left.jpg);
+    width: 8px;
+    height: 39px;
+    position: absolute; }
+  .home-map-button .home-map-button-decor-left {
+    left: 0;
+    top: 0; }
+  .home-map-button .home-map-button-decor-right {
+    right: 0;
+    top: 0; }
+
+.home-map-button:hover {
+  background: #dccdaa; }
+
+a#home-map-tickets:link, a#home-map-tickets:active, a#home-map-tickets:visited,
+a#home-map-travel-connections:link, a#home-map-travel-connections:active, a#home-map-travel-connections:visited {
+  color: #4d3730;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase; }
+
+a.home-map-button {
+  color: #4d373; }
+
+#home-map-tickets {
+  bottom: 77px;
+  right: 18px; }
+  #home-map-tickets i {
+    background-position: -360px 335px; }
+
+#home-map-travel-connections {
+  bottom: 22px;
+  right: 18px; }
+  #home-map-travel-connections i {
+    width: 35px;
+    background-position: -315px 335px; }
+
 #top-title-area {
   background: rgba(0, 0, 0, 0.5);
   min-height: 100px;
@@ -1185,12 +1240,12 @@ ul#menu-main-home-nav li.holidays-and-calendar:hover i {
   padding: 3px; }
   #breadcrumbs li {
     float: left;
-    color: #8eb18c;
+    color: #A8D5A5;
     margin-right: 10px;
     font-size: .88em;
     text-shadow: 0px 0px 2px black; }
     #breadcrumbs li a:link, #breadcrumbs li a:active, #breadcrumbs li a:visited, #breadcrumbs li a:hover {
-      color: #8eb18c;
+      color: #A8D5A5;
       text-decoration: underline; }
     #breadcrumbs li a:hover {
       text-decoration: underline; }
@@ -1205,7 +1260,8 @@ ul#menu-main-home-nav li.holidays-and-calendar:hover i {
 .subpage #top-title-area {
   border-bottom: 4px solid black; }
 .subpage #featured-image-container img {
-  width: 100%; }
+  width: 100%;
+  border: 3px solid tan; }
 .subpage #route-title-holder {
   clear: left;
   margin-left: 0;
@@ -1243,9 +1299,10 @@ ul#menu-main-home-nav li.holidays-and-calendar:hover i {
   font-weight: 600; }
 .subpage .interior {
   padding: 20px;
-  padding-top: 10px; }
+  padding-top: 15px;
+  font-size: .9em; }
   .subpage .interior h3:first-of-type {
-    margin-top: 0; }
+    margin-top: 0px; }
 .subpage a.subpage-see-all {
   float: left;
   margin: 5px; }
@@ -1361,6 +1418,39 @@ ul#menu-main-home-nav li.holidays-and-calendar:hover i {
   margin-right: 7px;
   margin-left: 2px; }
 
+#subpage-main-content-panel {
+  border-top: 3px solid tan; }
+  #subpage-main-content-panel .interior h3, #subpage-main-content-panel .interior h2 {
+    background: #dac2ac;
+    padding: 10px;
+    border: 0;
+    margin-top: 10px; }
+  #subpage-main-content-panel .interior h3:first-of-type, #subpage-main-content-panel .interior h2:first-of-type {
+    margin-top: 0px; }
+  #subpage-main-content-panel .interior {
+    line-height: 1.7em; }
+
+.interior {
+  color: black; }
+
+#subpage-top-links #subpage-link-title {
+  float: left;
+  padding-top: 28px;
+  margin-left: 20px; }
+#subpage-top-links ul {
+  float: left; }
+  #subpage-top-links ul li {
+    float: left;
+    padding: 7px 10px;
+    font-size: .9em;
+    border-left: 1px solid rgba(0, 0, 0, 0.4); }
+  #subpage-top-links ul li:first-of-type {
+    border-left: 0; }
+
+#subpage-top-parent-link {
+  padding: 20px;
+  border-bottom: rgba(0, 0, 0, 0.1) solid 1px; }
+
 #route-main {
   background-color: #3b3830;
   min-height: 200px; }
@@ -1453,7 +1543,10 @@ ul#menu-main-home-nav li.holidays-and-calendar:hover i {
   margin-bottom: 10px; }
 
 #effective_dates {
-  float: left; }
+  float: left;
+  clear: left;
+  margin-bottom: 5px;
+  font-size: 1.2em; }
 
 #route-main {
   padding: 20px;
@@ -1500,9 +1593,9 @@ ul#menu-main-home-nav li.holidays-and-calendar:hover i {
       font-size: .7em; }
 
 .route-box-shadow {
-  -webkit-box-shadow: 0px 3px 4px 0px #292721;
-  -moz-box-shadow: 0px 3px 4px 0px #292721;
-  box-shadow: 0px 3px 4px 0px #292721; }
+  -webkit-box-shadow: 0px 3px 4px 0px black;
+  -moz-box-shadow: 0px 3px 4px 0px black;
+  box-shadow: 0px 3px 4px 0px black; }
 
 #route-alert-holder {
   background-color: #edbc38;
@@ -1570,11 +1663,12 @@ ul#menu-main-home-nav li.holidays-and-calendar:hover i {
   #route-schedule-info #holiday-link {
     position: absolute;
     right: 10%;
-    top: 10px; }
+    top: 0px; }
     #route-schedule-info #holiday-link a:link, #route-schedule-info #holiday-link a:active, #route-schedule-info #holiday-link a:visited {
       color: #255b8d; }
   #route-schedule-info li {
-    margin-bottom: 5px; }
+    margin-bottom: 5px;
+    width: 55%; }
 
 #route-timetable-links-holder ul {
   margin-bottom: 0; }
@@ -1592,7 +1686,9 @@ ul#menu-main-home-nav li.holidays-and-calendar:hover i {
     #route-timetable-links-holder ul li .route-timetable-title {
       font-weight: bold;
       text-transform: uppercase;
-      margin-top: 8px; }
+      margin-top: 8px;
+      margin-left: 6px;
+      margin-right: 6px; }
     #route-timetable-links-holder ul li .route-timetable-trips {
       margin-top: 4px;
       font-size: .9em; }

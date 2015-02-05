@@ -49,12 +49,14 @@
 			float: left; 
 			margin-left: 29px;
 			margin-top: 20px;
+			z-index: 99;
+			position: relative;
 		}
 		
 		#desktop-map-alerts {
 			position: absolute;
 			right: 20px;
-			bottom: 100px;
+			bottom: 125px;
 		}
 		
 		#map-decoration-lines-top {
@@ -437,6 +439,7 @@ $rimheight: 20px;
 	background-image: url(../images/wood-wide-left-corner.png);
 	background-position: left 0;
 } 
+
 #right-wood-base {
 	position: absolute;
 	right: 0;
@@ -448,6 +451,78 @@ $rimheight: 20px;
 }
 
 
+.home-map-button {
+	position: absolute;
+	padding: 8px 15px 7px;
+	background: #ecdcb8;
+	border: 1px solid #e3cdac;
+	border-right: 0;
+	border-left: 0;
+	
+	
+	i {
+		float: left;
+		width: 24px;
+		height: 24px;
+		background-image: url(../images/yarts-sprites.png);
+		margin-right: 5px;
+		position:relative;
+		top: 3px;
+	}
+	
+	
+	
+	
+	.home-map-button-decor-left, .home-map-button-decor-right {
+		background-image: url(../images/map-buttom-edge-left.jpg);
+		width: 8px;
+		height: 39px;
+		position: absolute;
+	}
+	.home-map-button-decor-left {
+		left: 0;
+		top: 0;
+	}
+	.home-map-button-decor-right {
+		right: 0;
+		top: 0;
+	}
+}
+
+.home-map-button:hover {
+	background: #dccdaa;
+}
+
+a#home-map-tickets:link,a#home-map-tickets:active,a#home-map-tickets:visited,
+a#home-map-travel-connections:link,a#home-map-travel-connections:active,a#home-map-travel-connections:visited {
+	color: #4d3730;
+	font-weight: bold;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+a.home-map-button {
+	color: #4d373;
+}
+
+#home-map-tickets {
+	bottom: 77px;
+	right: 18px;
+	
+	i {
+		background-position: -360px 335px;
+	}
+}
+
+#home-map-travel-connections {
+	bottom: 22px;
+	right: 18px;
+	i {
+		width: 35px;
+		background-position: -315px 335px;
+	}
+	
+}
 
 
 

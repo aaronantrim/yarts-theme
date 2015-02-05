@@ -42,14 +42,12 @@
 		<![endif]-->
 
 		<?php // wordpress head functions ?>
-		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	
 		
 		<?php wp_head(); ?>
+		
 		<script src="<?php echo get_template_directory_uri(); ?>/library/lightbox2/js/lightbox.min.js"></script>
-
 		<link href="<?php echo get_template_directory_uri(); ?>/library/lightbox2/css/lightbox.css" rel="stylesheet" />
-
-
 		<script src="<?php echo get_template_directory_uri(); ?>/library/js/yarts.js"></script> 
 		<?php // end of wordpress head ?>
 

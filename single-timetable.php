@@ -96,7 +96,7 @@ $bytesize = number_format($bytesize/1000000,1).' MB';
 
 ?>
 
-<div id="route-pdf-link"><a href="<?php echo $file_url; ?>"><i></i>Download <?php the_field('route_short_name'); ?> <br />Service Guide [PDF, <?php echo $bytesize; ?>]</a></div>	
+<!--<div id="route-pdf-link"><a href="<?php echo $file_url; ?>"><i></i>Download Printable Guide [PDF]</a></div>	-->
 					<br style="clear:both;" />
 				</div> <!-- end #top-title-area -->
 				<div id="home-wood-top" class="wood-back subpage">

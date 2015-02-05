@@ -39,7 +39,7 @@
 					<div id="page-title-text"><?php the_field(''); ?></div>
 					<div id="destinations-served">Service Connecting <?php the_field('route_destinations_served'); ?></div>
 					<hr id="route-title-info-separator" />
-					<div id="service-days"><?php the_field('route_service_days'); ?></div>
+					<!--<div id="service-days"><?php the_field('route_service_days'); ?></div>-->
 					<div id="effective_dates"><?php the_field('route_effective_dates'); ?></div>
 					<div id="route-selector">
 					<?php 
@@ -93,7 +93,7 @@ $bytesize = number_format($bytesize/1000000,1).' MB';
 
 ?>
  
-<div id="route-pdf-link"><a href="<?php echo $file_url; ?>"><i></i>Download <?php the_field('route_short_name'); ?> Service Guide [PDF, <?php echo $bytesize; ?>]</a></div>	
+<div id="route-pdf-link"><a href="<?php echo $file_url; ?>"><i></i>Download Printable Guide [PDF]</a></div>	
 					<br style="clear:both;" />
 				</div> <!-- end #top-title-area -->
 				
@@ -212,7 +212,7 @@ $bytesize = number_format($bytesize/1000000,1).' MB';
 								<div id="route-schedule-info">
 									<ul>
 										<li>&#9632; <?php the_field('route_service_days'); ?></li>
-										<li>&#9632; <?php the_field('route_effective_dates'); ?></li>
+									<!--	<li>&#9632; <?php the_field('route_effective_dates'); ?></li> -->
 									</ul>
 									<div id="holiday-link"><a href="<?php echo get_permalink(14); ?>">(Check Holidays)</a></div>
 								</div><!-- end #route-schedule-info -->
