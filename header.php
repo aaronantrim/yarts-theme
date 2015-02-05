@@ -49,6 +49,7 @@
 		<script src="<?php echo get_template_directory_uri(); ?>/library/lightbox2/js/lightbox.min.js"></script>
 		<link href="<?php echo get_template_directory_uri(); ?>/library/lightbox2/css/lightbox.css" rel="stylesheet" />
 		<script src="<?php echo get_template_directory_uri(); ?>/library/js/yarts.js"></script> 
+		<script src="<?php echo get_template_directory_uri(); ?>/library/js/fares.js"></script> 
 		<?php // end of wordpress head ?>
 
 		<?php // drop Google Analytics Here ?>
