@@ -156,9 +156,9 @@
 						<div id="home-more-news"><a href="./news">See More News >></a></div>
 						<div id="home-middle-contact-social">
 							<a id="home-contact-us" href="<?php echo get_site_url(); ?>/contact-us">Contact Us</a>
-							<a id="home-facebook" href=""></a>
-							<a id="home-twitter" href=""></a>
-							<a id="home-youtube" href=""></a>
+							<a id="home-facebook" href="https://www.facebook.com/rideyarts"></a>
+							<a id="home-twitter" href="https://twitter.com/rideyarts"></a>
+							<!-- <a id="home-youtube" href=""></a> -->
 						</div><!-- end #home-middle-contact-social -->
 					</div> <!-- end #home-middle-col-2 -->
 					<div id="home-middle-col-3" class="home-middle-col">
