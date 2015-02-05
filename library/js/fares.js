@@ -43,6 +43,7 @@ select_start_zone.change(function() {
 });
 function update_fare_divs(amounts) {
 	$('#regular_fare').html(amounts.regular); // update the DIV
+	
 }
 $('#fare_zones').submit(function() { // catch the form's submit event
     $.ajax({ // create an AJAX call...
@@ -51,6 +52,7 @@ $('#fare_zones').submit(function() { // catch the form's submit event
         url: $(this).attr('action'), // the file to call
         success: function(response) { // on success..
 			update_fare_divs(response);
+			$('#get-fares-results').addClass('show');
         }
     });
     return false; // cancel original event to prevent form submitting

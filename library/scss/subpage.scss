@@ -383,3 +383,24 @@ table {
 
 	}
 }
+
+
+#get-fares-results {
+	width: 100%;
+	clear: both;
+}
+#get-fares-results .info {
+	border: 1px solid rgba(0,0,0,.3);
+	border-radius: 4px;
+	padding: 8px;
+	background: #eee;
+	width: 50px;
+
+
+}
+
+#get-fares-results.show .info {
+	background: none repeat scroll 0% 0% #4DBE6E;
+	color: #FFF;
+	font-weight: bold;
+}

@@ -99,9 +99,10 @@
 										
 									 the_content();  
 									 ?>
-									 	<h2>Fare Tables</h2>   
+									 	
 									 <?php
 									 if($post->post_name  == "tickets-and-fares") {
+									?> <h2>Fare Tables</h2>    <?php
 											$files = array();
 												$base_directory = getcwd();
 												$fares_loc = $base_directory.'/wp-content/transit-data/fares/';
@@ -120,7 +121,7 @@
 												closedir($handle);
 											}
 										}?>
-									 </div>
+									 </div><!-- inerior? -->
 						</div><!-- end #subpage-main-content-panel -->
 						<br style="clear: both;" />
 					</div><!-- #subpage-left-col -->
