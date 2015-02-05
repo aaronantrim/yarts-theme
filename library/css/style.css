@@ -1237,17 +1237,16 @@ a.home-map-button {
   border-radius: 4px;
   margin: 0;
   padding: 0;
-  padding: 3px; }
-  #breadcrumbs li {
-    float: left;
+  padding: 3px;
+  color: #A8D5A5;
+  font-size: .88em; }
+  #breadcrumbs a {
     color: #A8D5A5;
-    margin-right: 10px;
-    font-size: .88em;
     text-shadow: 0px 0px 2px black; }
-    #breadcrumbs li a:link, #breadcrumbs li a:active, #breadcrumbs li a:visited, #breadcrumbs li a:hover {
+    #breadcrumbs a a:link, #breadcrumbs a a:active, #breadcrumbs a a:visited, #breadcrumbs a a:hover {
       color: #A8D5A5;
       text-decoration: underline; }
-    #breadcrumbs li a:hover {
+    #breadcrumbs a a:hover {
       text-decoration: underline; }
 
 #page-title-text {

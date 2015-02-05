@@ -12,6 +12,69 @@ sidebars, comments, ect.
 require_once( 'library/bones.php' );
 
 function the_breadcrumb() {
+ 
+global $post;
+ 
+$trail = '<div id="breadcrumbs"><a href="'.get_site_url().'">Home</a> » ';
+$page_title = get_the_title($post->ID);
+ 
+if($post->post_parent) {
+$parent_id = $post->post_parent;
+ 
+while ($parent_id) {
+$page = get_page($parent_id);
+$breadcrumbs[] = '<a href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a> » ';
+$parent_id = $page->post_parent;
+}
+ 
+$breadcrumbs = array_reverse($breadcrumbs);
+foreach($breadcrumbs as $crumb) $trail .= $crumb;
+}
+
+$post_type = get_post_type();
+if(  get_post_type_object( $post_type )->rewrite['slug'] == 'routes-and-schedules') {
+	$trail .= '<a href="'.get_site_url().'/routes-schedules">Routes and Schedules</a> » ';
+}
+if(  get_post_type_object( $post_type )->rewrite['slug'] == 'timetables') {
+	$parent_route_id = -1;
+	$parent_title = '';
+	// args
+	$args = array(
+		'numberposts' => 1,
+		'post_type' => 'route',
+		'meta_key' => 'route_internal_short_name',
+		'meta_value' => get_field('timetable_internal_short_name')
+	);
+
+	// get results
+	$the_query = new WP_Query( $args );
+
+	// The Loop
+	?>
+	<?php if( $the_query->have_posts() ): ?>
+	
+		<?php while ( $the_query->have_posts() ) : $the_query->the_post();
+			$parent_route_id = $post->ID;
+
+		 endwhile; ?>
+	
+	<?php endif; ?>
+
+	<?php wp_reset_query(); 
+	
+	$trail .= '<a href="'.get_site_url().'/routes-schedules">Routes and Schedules</a> » ';
+	$trail .= '<a href="'.get_the_permalink($parent_route_id).'">'.get_the_title($parent_route_id).'</a> » ';
+	$page_title = 'Timetable : '.get_the_title($post->ID);
+	
+}	
+ 
+$trail .= $page_title;
+
+ 
+echo $trail.'</div><!-- end #breadbrumbs -->';	
+ 
+}
+function old_the_breadcrumb() {
     global $post;
     echo '<ul id="breadcrumbs">';
    /* if (!is_home()) {
