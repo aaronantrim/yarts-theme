@@ -161,6 +161,7 @@
 
 .main-subpage-top-menu {  
 	position: absolute;
+	width: 100%;
 	top: 0; 
 	z-index: 10;
 		
@@ -352,4 +353,33 @@ $rimheight: 53px;
 padding: 20px;
 border-bottom: rgba(0,0,0,.1) solid 1px;
 }
+#subpage-top-links {
+	border-bottom: rgba(0,0,0,.1) solid 1px;
+}
 
+
+.page {
+table {
+	margin-top: 15px;
+}
+	table,caption {
+	background: white;
+	box-shadow: 0px 2px 5px rgba(0,0,0,.5);
+	tr:hover {
+		background-color: lighten(#dae4bb,10);
+	}
+		th {
+			background-color: #dae4bb;
+		}
+	
+	}
+	caption {
+		border: 1px solid black;
+		border-bottom: 0;
+		font-size: 1.3em;
+		font-weight: bold;
+		padding:10px;
+
+
+	}
+}

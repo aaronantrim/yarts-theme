@@ -233,7 +233,7 @@
 					<?php $post = get_page_by_path('home-page-about',OBJECT,'post');  
 						echo $post->post_content;
 					?>
-						<a id="home-desc-link" href="<?php echo get_site_url();?>/about">More about YARTS</a>  <a href="<?php echo get_edit_post_link( 127 ); ?>">Edit this</a> 
+						<a id="home-desc-link" href="<?php echo get_site_url();?>/about">More about YARTS</a>  <a href="<?php echo get_edit_post_link( $post->ID ); ?>">Edit this</a> 
 						<div id="wood-bottom-left"></div>
 						<div id="wood-bottom-right"></div>
 					</div><!-- end #home-desc-->

@@ -34,5 +34,10 @@ jQuery(document).ready(function($) {
 		$(this).parent().parent().find('#bg_clear').toggleClass($(this).attr('alt'));
 	});
 
+	var is_ios = /(iPad|iPhone|iPod)/g.test( navigator.userAgent );
+	if(is_ios)    
+	{
+	 $('<link rel="stylesheet" type="text/css" href="/wp-content/themes/yarts/library/css/ios.css" />').appendTo("head");
+	};
 
 });

@@ -64,7 +64,9 @@
 												echo '<li><a href="'.get_the_permalink($child->ID).'">'.$child->post_title.'</a></li>';
 											 }
 											 ?>
+											 <br style="clear: both;" />
 										 </ul>
+										 											 <br style="clear: both;" />
 								 </div><!-- end #subpage-top-links -->
 								 <?php
 								  }
@@ -91,7 +93,33 @@
 										?>
 										<div class="interior">
 										<?php
-									 the_content(); ?>
+										
+										// if is fares page
+										
+										
+									 the_content();  
+									 ?>
+									 	<h2>Fare Tables</h2>   
+									 <?php
+									 if($post->post_name  == "tickets-and-fares") {
+											$files = array();
+												$base_directory = getcwd();
+												$fares_loc = $base_directory.'/wp-content/transit-data/fares/';
+												
+											 if ($handle = opendir($fares_loc)) {
+							
+												while (false !== ($entry = readdir($handle))) {
+
+													if ($entry != "." && $entry != "..") {
+
+														echo file_get_contents($base_directory.'/wp-content/transit-data/fares/'.$entry);
+
+													}
+												}
+
+												closedir($handle);
+											}
+										}?>
 									 </div>
 						</div><!-- end #subpage-main-content-panel -->
 						<br style="clear: both;" />

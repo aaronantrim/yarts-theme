@@ -100,7 +100,14 @@ $bytesize = number_format($bytesize/1000000,1).' MB';
 
 				<div id="route-main">
 					<div id="route-main-col-left">
-					
+					<?php if (get_field('route_info_box')!='') { ?>
+						<div id="route-info-box" class="route-box route-box-shadow">
+						<h2>Route Info</h2>
+						<div class="interior">
+							<?php the_field('route_info_box'); ?>
+							</div><!-- end .interior -->
+						</div><!-- #route-info-box -->
+					<?php } ?>
 						<div id="route-detail-map" class="route-box route-box-shadow">
 							<h2><?php echo get_field('route_short_name'); ?> Detail Map <span class="click-message">(Click to enlarge)</span></h2>
 							<a href="<?php

@@ -1089,12 +1089,19 @@ FOOTER STYLES
 	
 span#routes-and-schedules-dropdown {
 	position: relative;
+	br {
+			display: none;
+		}
 	#route-dropdown {
 		position: absolute;
 		top: -9999px; 
 		
 		border-bottom-right-radius: 10px;
 		border-bottom-left-radius: 10px;
+		
+		br {
+			display: none;
+		}
 		
 		
 		li {
@@ -1145,8 +1152,14 @@ span#routes-and-schedules-dropdown {
 
 span#routes-and-schedules-dropdown:hover {
 	position: relative;
+	br {
+			display: inherit;
+		}
 	#route-dropdown {
 		position: absolute;
+		br {
+			display: inherit;
+		}
 		top: 50px;
 		li:hover { 
 			background: #523220;

@@ -1,47 +1,93 @@
 <?php get_header(); ?>
 
-			<div id="content">
+			<div id="home-wood-top" class="wrap cf">
+					<div id="center-wood-base"></div>
+					<div id="left-wood-base">  </div>
+					<div id="right-wood-base"> </div>
+					
+					<?php 
+					
+					$subpage_walker = new My_Subpage_Walker;
+					wp_nav_menu(array(
+    					'container' => 'div',                           // enter '' to remove nav container (just make sure .footer-links in _base.scss isn't wrapping)
+    					'container_class' => 'main-subpage-top-menu cf',         // class of container (should you choose to use it)
+    					'menu' => __( 'Main subpage top menu', 'bonestheme' ),   // nav name
+    					'menu_class' => 'nav footer-nav cf',            // adding custom nav class
+    					'theme_location' => 'main-subpage-top-menu',    // where it's located in the theme
+    					'before' => '',                                 // before the menu
+    					'after' => '',                                  // after the menu
+    					'link_before' => '',                            // before each link
+    					'link_after' => '',                             // after each link
+    					'depth' => 0,   
+    					'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s<br style="clear:both;" />	</span></span></ul>',
+    					                                // limit the depth of the nav
+    					'fallback_cb' => 'bones_footer_links_fallback',  // fallback function
+    					'walker' => $subpage_walker
+						)); ?>
+				</div><!-- end #home-wood-top -->
+			<div id="subpage-holder" class="wrap cf subpage" >
+			
+			<div id="main-subpage-top-menu" >
+				<?php 
+				
+				wp_reset_query(); 
+?>
+				</div><!-- end #main-subpage-top-menu -->
+				<div id="top-title-area">
+					<?php //the_breadcrumb(); ?>
 
-				<div id="inner-content" class="wrap cf">
+					<div id="route-title-holder">
+						<div id="page-title-text">
+							<?php if (get_post_type_object( $post_type )->rewrite['slug'] == 'alerts') {echo 'Alerts';}
+							else if (get_post_type_object( $post_type )->rewrite['slug'] == 'news') {echo 'News';}  ?>
+						</div>
+						
+					</div><!-- end #route-title-holder -->
+						<br style="clear:both;" />
+				</div> <!-- end #top-title-area -->
+				
 
-						<main id="main" class="m-all t-2of3 d-5of7 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+				<div id="route-main">
+					<div id="subpage-left-col" class="subpage-col">
+						<div id="subpage-main-content-panel" class="route-box route-box-shadow">
+							<?php
+															  if(!empty($post->post_parent )) {
+								 ?>
+								 	<div id="subpage-top-parent-link">
+								 		<a href="<?php echo get_the_permalink($post->post_parent);?>">Return to <?php echo get_the_title($post->post_parent); ?></a>
+								 	</div>
+								 <?php
+								  }
+								 $children = get_pages('child_of='.$post->ID.'&parent='.$post->ID);
+								 if(sizeof($children)> 0) {
+								 ?>
+								 	<div id="subpage-top-links">
+								 		<!--<div id="subpage-link-title">Subpages:</div>--!>
+										<ul>
+											 <?php
+								
+											 foreach($children as &$child) {
+												echo '<li><a href="'.get_the_permalink($child->ID).'">'.$child->post_title.'</a></li>';
+											 }
+											 ?>
+											 <br style="clear: both;" />
+										 </ul>
+										 											 <br style="clear: both;" />
+								 </div><!-- end #subpage-top-links -->
+								 <?php
+								  }
 
-							<?php if (is_category()) { ?>
-								<h1 class="archive-title h2">
-									<span><?php _e( 'Posts Categorized:', 'bonestheme' ); ?></span> <?php single_cat_title(); ?>
-								</h1>
-
-							<?php } elseif (is_tag()) { ?>
-								<h1 class="archive-title h2">
-									<span><?php _e( 'Posts Tagged:', 'bonestheme' ); ?></span> <?php single_tag_title(); ?>
-								</h1>
-
-							<?php } elseif (is_author()) {
-								global $post;
-								$author_id = $post->post_author;
-							?>
-								<h1 class="archive-title h2">
-
-									<span><?php _e( 'Posts By:', 'bonestheme' ); ?></span> <?php the_author_meta('display_name', $author_id); ?>
-
-								</h1>
-							<?php } elseif (is_day()) { ?>
-								<h1 class="archive-title h2">
-									<span><?php _e( 'Daily Archives:', 'bonestheme' ); ?></span> <?php the_time('l, F j, Y'); ?>
-								</h1>
-
-							<?php } elseif (is_month()) { ?>
-									<h1 class="archive-title h2">
-										<span><?php _e( 'Monthly Archives:', 'bonestheme' ); ?></span> <?php the_time('F Y'); ?>
-									</h1>
-
-							<?php } elseif (is_year()) { ?>
-									<h1 class="archive-title h2">
-										<span><?php _e( 'Yearly Archives:', 'bonestheme' ); ?></span> <?php the_time('Y'); ?>
-									</h1>
-							<?php } ?>
-
-							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+								 ?>
+								 
+							
+							
+										<div class="interior">
+										<?php
+										
+										// if is fares page
+										//PUT LOOP HERE
+										
+									if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article">
 
@@ -75,30 +121,24 @@
 
 							<?php endwhile; ?>
 
-									<?php bones_page_navi(); ?>
 
-							<?php else : ?>
-
-									<article id="post-not-found" class="hentry cf">
-										<header class="article-header">
-											<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
-										</header>
-										<section class="entry-content">
-											<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
-										</section>
-										<footer class="article-footer">
-												<p><?php _e( 'This is the error message in the archive.php template.', 'bonestheme' ); ?></p>
-										</footer>
-									</article>
+							
 
 							<?php endif; ?>
 
-						</main>
-
-					<?php get_sidebar(); ?>
-
-				</div>
-
+										
+										
+										
+										</div><!-- inerior? -->
+						</div><!-- end #subpage-main-content-panel -->
+						<br style="clear: both;" />
+					</div><!-- #subpage-left-col -->
+					<div id="subpage-right-col" class="subpage-col">
+					
+					</div><!-- edn #subpage-right-col --> 
+					<br style="clear: both;" />
+				</div><!-- end #route-main -->
+				
 			</div>
 
 <?php get_footer(); ?>

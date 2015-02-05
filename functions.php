@@ -60,7 +60,7 @@ if(  get_post_type_object( $post_type )->rewrite['slug'] == 'timetables') {
 	
 	<?php endif; ?>
 
-	<?php wp_reset_query(); 
+	<?php 
 	
 	$trail .= '<a href="'.get_site_url().'/routes-schedules">Routes and Schedules</a> » ';
 	$trail .= '<a href="'.get_the_permalink($parent_route_id).'">'.get_the_title($parent_route_id).'</a> » ';
