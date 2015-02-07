@@ -88,7 +88,7 @@
 // view array of data
 
 $bytesize = filesize( get_attached_file( $file ) );
-$file_url = get_attached_file( $file );
+$file_url = wp_get_attachment_url( $file );
 $bytesize = number_format($bytesize/1000000,1).' MB';
 
 ?>
@@ -221,7 +221,9 @@ $bytesize = number_format($bytesize/1000000,1).' MB';
 										<li>&#9632; <?php the_field('route_service_days'); ?></li>
 									<!--	<li>&#9632; <?php the_field('route_effective_dates'); ?></li> -->
 									</ul>
+									<?php if($post->post_name  == "merced-hwy-140") { ?>
 									<div id="holiday-link"><a href="<?php echo get_permalink(14); ?>">(Check Holidays)</a></div>
+									<?php } ?>
 								</div><!-- end #route-schedule-info -->
 								<div id="route-timetable-links-holder">
 									<ul>
