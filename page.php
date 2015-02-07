@@ -102,7 +102,7 @@
 									 	
 									 <?php
 									 if($post->post_name  == "tickets-and-fares") {
-									?> <h2>Fare Tables</h2>    <?php
+
 											$files = array();
 												$base_directory = getcwd();
 												$fares_loc = $base_directory.'/wp-content/transit-data/fares/';
