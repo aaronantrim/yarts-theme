@@ -266,7 +266,7 @@ $bytesize = number_format($bytesize/1000000,1).' MB';
 						<div id="fares-box" class="route-box route-box-shadow">
 						<h2>Fares</h2>
 							<div class="interior">
-								All YARTS tickets include the entree fee to Yosemite
+								All YARTS tickets include the entrance fee to Yosemite
 								<hr />
 								<strong>For Complete fare information, see <a href="<?php echo get_permalink(8); ?>#<?php echo slugify(get_field('route_short_name'));?>"><?php echo get_the_title(8); ?></a></strong>
 							</div>
