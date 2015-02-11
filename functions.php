@@ -354,8 +354,8 @@ function create_area_tax() {
 		);
 
 
-	$service_areas = array("Merced", "MamMoth Lake", "Sonora", "Fresno", "All Routes");
-	$service_areas_safe = array("Merced", "Mammoth_Lake", "Sonora", "Fresno", "all-routes");
+	$service_areas = array("Merced", "Mammoth", "Sonora", "Fresno", "All Routes");
+	$service_areas_safe = array("Merced", "Mammoth", "Sonora", "Fresno", "all-routes");
 	$ind = 0;
 	foreach($service_areas as &$service_area) {
 		wp_insert_term(
